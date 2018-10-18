@@ -1,4 +1,4 @@
-package piapro.github.io.instax.dialogs;
+package piapro.github.io.instax.PasswordWindow;
 
 import android.content.Context;
 import android.os.Bundle;
@@ -17,27 +17,27 @@ import piapro.github.io.instax.R;
  * Created by User on 7/10/2017.
  */
 
-public class ConfirmPasswordDialog extends DialogFragment {
+public class ConfirmPasswordWindow extends DialogFragment {
 
-    private static final String TAG = "ConfirmPasswordDialog";
+    private static final String TAG = "ConfirmPasswordWindow";
 
     public interface OnConfirmPasswordListener{
         public void onConfirmPassword(String password);
     }
-    OnConfirmPasswordListener mOnConfirmPasswordListener;
+    OnConfirmPasswordListener cOnConfirmPasswordListener;
 
 
     //vars
-    TextView mPassword;
+    TextView cPassword;
 
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
+
         View view = inflater.inflate(R.layout.firebase_confirm_password, container, false);
-        mPassword = (TextView) view.findViewById(R.id.field_confirm_password);
+        cPassword = (TextView) view.findViewById(R.id.field_confirm_password);
 
-        Log.d(TAG, "onCreateView: started.");
-
+        Log.d(TAG, "onCreateView: start.");
 
         TextView confirmDialog = (TextView) view.findViewById(R.id.confirm_button);
         confirmDialog.setOnClickListener(new View.OnClickListener() {
@@ -45,9 +45,9 @@ public class ConfirmPasswordDialog extends DialogFragment {
             public void onClick(View v) {
                 Log.d(TAG, "onClick: captured password and confirming.");
 
-                String password = mPassword.getText().toString();
+                String password = cPassword.getText().toString();
                 if(!password.equals("")){
-                    mOnConfirmPasswordListener.onConfirmPassword(password);
+                    cOnConfirmPasswordListener.onConfirmPassword(password);
                     getDialog().dismiss();
                 }else{
                     Toast.makeText(getActivity(), "you must enter a password", Toast.LENGTH_SHORT).show();
@@ -60,7 +60,7 @@ public class ConfirmPasswordDialog extends DialogFragment {
         cancelDialog.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Log.d(TAG, "onClick: closing the dialog");
+                Log.d(TAG, "onClick: close this window");
                 getDialog().dismiss();
             }
         });
@@ -73,7 +73,7 @@ public class ConfirmPasswordDialog extends DialogFragment {
     public void onAttach(Context context) {
         super.onAttach(context);
         try{
-            mOnConfirmPasswordListener = (OnConfirmPasswordListener) getTargetFragment();
+            cOnConfirmPasswordListener = (OnConfirmPasswordListener) getTargetFragment();
         }catch (ClassCastException e){
             Log.e(TAG, "onAttach: ClassCastException: " + e.getMessage() );
         }

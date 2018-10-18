@@ -5,21 +5,16 @@ import android.os.Parcelable;
 
 import java.util.List;
 
-/**
- * Created by User on 7/29/2017.
- */
-
 public class Photo implements Parcelable {
 
-    private String caption;
-    private String date_created;
-    private String image_path;
-    private String photo_id;
     private String user_id;
-    private String tags;
+    private String photo_id;
+    private String image_path;
+    private String date_created;
+    private String caption;
     private List<Like> likes;
     private List<Comment> comments;
-
+    private String tags;
 
     public Photo() {
 
@@ -38,11 +33,11 @@ public class Photo implements Parcelable {
     }
 
     protected Photo(Parcel in) {
-        caption = in.readString();
+        user_id = in.readString();
+        photo_id = in.readString();
         date_created = in.readString();
         image_path = in.readString();
-        photo_id = in.readString();
-        user_id = in.readString();
+        caption = in.readString();
         tags = in.readString();
     }
 

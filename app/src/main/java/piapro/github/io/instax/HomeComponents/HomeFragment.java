@@ -29,25 +29,25 @@ import piapro.github.io.instax.FirebaseModels.Photo;
 import piapro.github.io.instax.FirebaseModels.Comment;
 
 public class HomeFragment extends Fragment {
+
     private static final String TAG = "HomeFragment";
 
-    //vars
-    private ArrayList<Photo> mPhotos;
-    private ArrayList<Photo> mPaginatedPhotos;
-    private ArrayList<String> mFollowing;
-    private ListView mListView;
-    private MainfeedListAdapter mAdapter;
-    private int mResults;
+    private ArrayList<Photo> hPhotos;
+    private ArrayList<Photo> hListedPhotos;
+    private ArrayList<String> hFollowing;
+    private ListView hListView;
+    private MainfeedListAdapter hAdapter;
+    private int hResult;
 
 
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.fragment_home, container, false);
-        mListView = (ListView) view.findViewById(R.id.listView);
-        mFollowing = new ArrayList<>();
-        mPhotos = new ArrayList<>();
 
+        View view = inflater.inflate(R.layout.fragment_home, container, false);
+        hPhotos = new ArrayList<>();
+        hFollowing = new ArrayList<>();
+        hListView = (ListView) view.findViewById(R.id.listView);
 
         if (FirebaseAuth.getInstance().getCurrentUser() != null) {
             getFollowing();
@@ -57,23 +57,24 @@ public class HomeFragment extends Fragment {
     }
 
     private void getFollowing(){
-        Log.d(TAG, "getFollowing: searching for following");
+        Log.d(TAG, "getFollowing: search for post of following users");
 
-        DatabaseReference reference = FirebaseDatabase.getInstance().getReference();
+        DatabaseReference dbref = FirebaseDatabase.getInstance().getReference();
 
-        Query query = reference
+        Query query = dbref
                 .child(getString(R.string.db_following))
                 .child(FirebaseAuth.getInstance().getCurrentUser().getUid());
         query.addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
                 for(DataSnapshot singleSnapshot : dataSnapshot.getChildren()){
-                    Log.d(TAG, "onDataChange: found user: " +
+                    Log.d(TAG, "onDataChange: find user: " +
                             singleSnapshot.child(getString(R.string.fd_user_id)).getValue());
 
-                    mFollowing.add(singleSnapshot.child(getString(R.string.fd_user_id)).getValue().toString());
+                    hFollowing.add(singleSnapshot.child(getString(R.string.fd_user_id)).getValue().toString());
                 }
-                mFollowing.add(FirebaseAuth.getInstance().getCurrentUser().getUid());
+                hFollowing.add(FirebaseAuth.getInstance().getCurrentUser().getUid());
+
                 //get the photos
                 getPhotos();
             }
@@ -86,15 +87,15 @@ public class HomeFragment extends Fragment {
     }
 
     private void getPhotos(){
-        Log.d(TAG, "getPhotos: getting photos");
-        DatabaseReference reference = FirebaseDatabase.getInstance().getReference();
-        for(int i = 0; i < mFollowing.size(); i++){
+        Log.d(TAG, "getPhotos: get post photos");
+        DatabaseReference dbref = FirebaseDatabase.getInstance().getReference();
+        for(int i = 0; i < hFollowing.size(); i++){
             final int count = i;
-            Query query = reference
+            Query query = dbref
                     .child(getString(R.string.db_user_photos))
-                    .child(mFollowing.get(i))
+                    .child(hFollowing.get(i))
                     .orderByChild(getString(R.string.fd_user_id))
-                    .equalTo(mFollowing.get(i));
+                    .equalTo(hFollowing.get(i));
             query.addListenerForSingleValueEvent(new ValueEventListener() {
                 @Override
                 public void onDataChange(DataSnapshot dataSnapshot) {
@@ -121,9 +122,9 @@ public class HomeFragment extends Fragment {
                         }
 
                         photo.setComments(comments);
-                        mPhotos.add(photo);
+                        hPhotos.add(photo);
                     }
-                    if(count >= mFollowing.size() -1){
+                    if(count >= hFollowing.size() -1){
                         //display our photos
                         displayPhotos();
                     }
@@ -138,29 +139,31 @@ public class HomeFragment extends Fragment {
     }
 
     private void displayPhotos(){
-        mPaginatedPhotos = new ArrayList<>();
-        if(mPhotos != null){
+
+        hListedPhotos = new ArrayList<>();
+
+        if(hPhotos != null){
             try{
-                Collections.sort(mPhotos, new Comparator<Photo>() {
+                Collections.sort(hPhotos, new Comparator<Photo>() {
                     @Override
                     public int compare(Photo o1, Photo o2) {
                         return o2.getDate_created().compareTo(o1.getDate_created());
                     }
                 });
 
-                int iterations = mPhotos.size();
+                int iterations = hPhotos.size();
 
                 if(iterations > 10){
                     iterations = 10;
                 }
 
-                mResults = 10;
+                hResult = 10;
                 for(int i = 0; i < iterations; i++){
-                    mPaginatedPhotos.add(mPhotos.get(i));
+                    hListedPhotos.add(hPhotos.get(i));
                 }
 
-                mAdapter = new MainfeedListAdapter(getActivity(), R.layout.layout_userfeed_list, mPaginatedPhotos);
-                mListView.setAdapter(mAdapter);
+                hAdapter = new MainfeedListAdapter(getActivity(), R.layout.layout_userfeed_list, hListedPhotos);
+                hListView.setAdapter(hAdapter);
 
             }catch (NullPointerException e){
                 Log.e(TAG, "displayPhotos: NullPointerException: " + e.getMessage() );
@@ -171,27 +174,27 @@ public class HomeFragment extends Fragment {
     }
 
     public void displayMorePhotos(){
-        Log.d(TAG, "displayMorePhotos: displaying more photos");
+        Log.d(TAG, "displayMorePhotos: display more photos");
 
         try{
 
-            if(mPhotos.size() > mResults && mPhotos.size() > 0){
+            if(hPhotos.size() > hResult && hPhotos.size() > 0){
 
                 int iterations;
-                if(mPhotos.size() > (mResults + 10)){
+                if(hPhotos.size() > (hResult + 10)){
                     Log.d(TAG, "displayMorePhotos: there are greater than 10 more photos");
                     iterations = 10;
                 }else{
                     Log.d(TAG, "displayMorePhotos: there is less than 10 more photos");
-                    iterations = mPhotos.size() - mResults;
+                    iterations = hPhotos.size() - hResult;
                 }
 
                 //add the new photos to the paginated results
-                for(int i = mResults; i < mResults + iterations; i++){
-                    mPaginatedPhotos.add(mPhotos.get(i));
+                for(int i = hResult; i < hResult + iterations; i++){
+                    hListedPhotos.add(hPhotos.get(i));
                 }
-                mResults = mResults + iterations;
-                mAdapter.notifyDataSetChanged();
+                hResult = hResult + iterations;
+                hAdapter.notifyDataSetChanged();
             }
         }catch (NullPointerException e){
             Log.e(TAG, "displayPhotos: NullPointerException: " + e.getMessage() );

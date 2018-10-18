@@ -4,8 +4,6 @@ import android.content.Context;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.os.Bundle;
-import android.os.PersistableBundle;
-import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
@@ -19,18 +17,10 @@ import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.RelativeLayout;
 
-import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.auth.FirebaseUser;
-import com.google.firebase.database.DataSnapshot;
-import com.google.firebase.database.DatabaseError;
-import com.google.firebase.database.DatabaseReference;
-import com.google.firebase.database.FirebaseDatabase;
-import com.google.firebase.database.ValueEventListener;
 import com.ittianyu.bottomnavigationviewex.BottomNavigationViewEx;
 
 import java.util.ArrayList;
 
-import piapro.github.io.instax.HomeComponents.HomeActivity;
 import piapro.github.io.instax.R;
 import piapro.github.io.instax.Utilities.BottomNavigationViewHelper;
 import piapro.github.io.instax.Utilities.MethodFirebase;
@@ -41,10 +31,11 @@ public class AccountActivity extends AppCompatActivity{
     private static final String TAG = "AccountActivity";
     private static final int ACTIVITY = 4;
 
-    private Context aContext;
     public SettingPageAdapter pagerAdapter;
     private ViewPager aViewPager;
     private RelativeLayout aRelativeLayout;
+
+    private Context aContext;
 
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
@@ -60,7 +51,7 @@ public class AccountActivity extends AppCompatActivity{
         setupFragment();
         getComeinIntent();
 
-        //arrowback to 'profileactivity'
+        //arrow back to 'profileactivity'
         ImageView arrowback = (ImageView) findViewById(R.id.back_button);
         arrowback.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -74,6 +65,7 @@ public class AccountActivity extends AppCompatActivity{
     }
     
     private void setupSettingList() {
+
         Log.d(TAG, "setupList: initialise setting list");
         ListView listView = (ListView) findViewById(R.id.context_accountsetting);
 

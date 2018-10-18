@@ -4,7 +4,6 @@ import android.content.Context;
 import android.support.annotation.LayoutRes;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
-import android.text.Layout;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -27,9 +26,6 @@ import piapro.github.io.instax.R;
 import piapro.github.io.instax.FirebaseModels.User;
 import piapro.github.io.instax.FirebaseModels.UserAccountSettings;
 
-/**
- * Created by User on 9/17/2017.
- */
 
 public class UserListAdapter extends ArrayAdapter<User>{
 

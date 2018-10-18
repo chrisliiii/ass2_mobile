@@ -2,14 +2,10 @@ package piapro.github.io.instax.FirebaseModels;
 
 import java.util.List;
 
-/**
- * Created by User on 8/22/2017.
- */
-
 public class Comment {
 
-    private String comment;
     private String user_id;
+    private String comment;
     private List<Like> likes;
     private String date_created;
 

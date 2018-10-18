@@ -44,10 +44,6 @@ import piapro.github.io.instax.FirebaseModels.Like;
 import piapro.github.io.instax.FirebaseModels.Photo;
 import piapro.github.io.instax.FirebaseModels.User;
 
-/**
- * Created by User on 6/29/2017.
- */
-
 public class ViewProfileFragment extends Fragment {
 
     private static final String TAG = "ProfileFragment";

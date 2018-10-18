@@ -16,16 +16,11 @@ import piapro.github.io.instax.ProfileComponents.AccountActivity;
 import piapro.github.io.instax.R;
 import piapro.github.io.instax.Utilities.Permissions;
 
-/**
- * Created by User on 5/28/2017.
- */
-
 public class PhotoFragment extends Fragment {
+
     private static final String TAG = "PhotoFragment";
 
-    //constant
     private static final int PHOTO_FRAGMENT_NUM = 1;
-    private static final int GALLERY_FRAGMENT_NUM = 2;
     private static final int  CAMERA_REQUEST_CODE = 5;
 
 
@@ -33,17 +28,17 @@ public class PhotoFragment extends Fragment {
     @Override
     public View onCreateView(final LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_image, container, false);
-        Log.d(TAG, "onCreateView: started.");
+        Log.d(TAG, "onCreateView: start.");
 
         Button btnLaunchCamera = (Button) view.findViewById(R.id.button_openCamera);
         btnLaunchCamera.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Log.d(TAG, "onClick: launching camera.");
+                Log.d(TAG, "onClick: launch camera.");
 
                 if(((ShareActivity)getActivity()).getCurrentTabNumber() == PHOTO_FRAGMENT_NUM){
                     if(((ShareActivity)getActivity()).checkPermissions(Permissions.CAMERA_PERMISSION[0])){
-                        Log.d(TAG, "onClick: starting camera");
+                        Log.d(TAG, "onClick: start camera");
                         Intent cameraIntent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
                         startActivityForResult(cameraIntent, CAMERA_REQUEST_CODE);
                     }else{
@@ -73,7 +68,7 @@ public class PhotoFragment extends Fragment {
 
         if(requestCode == CAMERA_REQUEST_CODE){
             Log.d(TAG, "onActivityResult: done taking a photo.");
-            Log.d(TAG, "onActivityResult: attempting to navigate to final share screen.");
+            Log.d(TAG, "onActivityResult: attempt to navigate to final share screen.");
 
             Bitmap bitmap;
             bitmap = (Bitmap) data.getExtras().get("data");

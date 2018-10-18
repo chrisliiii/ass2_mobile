@@ -1,18 +1,13 @@
 package piapro.github.io.instax.Utilities;
 
-import android.animation.Animator;
 import android.animation.AnimatorSet;
 import android.animation.ObjectAnimator;
 import android.util.Log;
 import android.view.View;
 import android.view.animation.AccelerateInterpolator;
-import android.view.animation.AnimationSet;
 import android.view.animation.DecelerateInterpolator;
 import android.widget.ImageView;
 
-/**
- * Created by User on 8/21/2017.
- */
 
 public class Heart {
 
@@ -76,20 +71,3 @@ public class Heart {
 
     }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

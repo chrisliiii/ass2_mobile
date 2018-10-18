@@ -10,11 +10,13 @@ import android.view.ViewGroup;
 import piapro.github.io.instax.R;
 
 public class CameraFragment extends Fragment {
-    private static final String TAG = "This is the Camera Fragment";
+
+    private static final String TAG = "This is Camera Fragment";
 
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, Bundle savedInstanceState) {
+
         View view = inflater.inflate(R.layout.fragment_camera, container,false);
         return view;
     }

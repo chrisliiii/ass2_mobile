@@ -2,10 +2,6 @@ package piapro.github.io.instax.Utilities;
 
 import android.Manifest;
 
-/**
- * Created by User on 7/10/2017.
- */
-
 public class Permissions {
 
     public static final String[] PERMISSIONS = {

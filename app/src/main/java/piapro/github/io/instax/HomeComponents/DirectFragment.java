@@ -10,11 +10,13 @@ import android.view.ViewGroup;
 import piapro.github.io.instax.R;
 
 public class DirectFragment extends Fragment {
-    private static final String TAG = "This is the Direct Fragment";
+
+    private static final String TAG = "This is Direct Fragment";
 
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, Bundle savedInstanceState) {
+
         View view = inflater.inflate(R.layout.fragment_direct, container,false);
         return view;
     }

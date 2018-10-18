@@ -3,7 +3,6 @@ package piapro.github.io.instax.ShareComponents;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.os.Bundle;
-import android.os.Environment;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.util.Log;
@@ -30,41 +29,38 @@ import piapro.github.io.instax.Utilities.FilePaths;
 import piapro.github.io.instax.Utilities.FileSearch;
 import piapro.github.io.instax.Utilities.GridImageAdapter;
 
-/**
- * Created by User on 5/28/2017.
- */
-
 public class GalleryFragment extends Fragment {
+
     private static final String TAG = "GalleryFragment";
 
-
-    //constants
     private static final int NUM_GRID_COLUMNS = 3;
 
-
-    //widgets
+    //tools
     private GridView gridView;
     private ImageView galleryImage;
-    private ProgressBar mProgressBar;
+    private ProgressBar gProgressBar;
     private Spinner directorySpinner;
 
     //vars
     private ArrayList<String> directories;
-    private String mAppend = "file:/";
-    private String mSelectedImage;
+    private String gAppend = "file:/";
+    private String gSelectedImage;
 
 
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
+
         View view = inflater.inflate(R.layout.fragment_gallery, container, false);
+
         galleryImage = (ImageView) view.findViewById(R.id.gallery_view);
         gridView = (GridView) view.findViewById(R.id.grid_view);
         directorySpinner = (Spinner) view.findViewById(R.id.spinner_directory);
-        mProgressBar = (ProgressBar) view.findViewById(R.id.progress_bar);
-        mProgressBar.setVisibility(View.GONE);
+        gProgressBar = (ProgressBar) view.findViewById(R.id.progress_bar);
+        gProgressBar.setVisibility(View.GONE);
         directories = new ArrayList<>();
-        Log.d(TAG, "onCreateView: started.");
+
+        Log.d(TAG, "onCreateView: start.");
 
         ImageView shareClose = (ImageView) view.findViewById(R.id.closeShare);
         shareClose.setOnClickListener(new View.OnClickListener() {
@@ -84,11 +80,11 @@ public class GalleryFragment extends Fragment {
 
                 if(isRootTask()){
                     Intent intent = new Intent(getActivity(), NextActivity.class);
-                    intent.putExtra(getString(R.string.chosen_image), mSelectedImage);
+                    intent.putExtra(getString(R.string.chosen_image), gSelectedImage);
                     startActivity(intent);
                 }else{
                     Intent intent = new Intent(getActivity(), AccountActivity.class);
-                    intent.putExtra(getString(R.string.chosen_image), mSelectedImage);
+                    intent.putExtra(getString(R.string.chosen_image), gSelectedImage);
                     intent.putExtra(getString(R.string.backTo_fragment), getString(R.string.edit_profile));
                     startActivity(intent);
                     getActivity().finish();
@@ -160,13 +156,13 @@ public class GalleryFragment extends Fragment {
         gridView.setColumnWidth(imageWidth);
 
         //use the grid adapter to adapter the images to gridview
-        GridImageAdapter adapter = new GridImageAdapter(getActivity(), R.layout.layout_gridimage, mAppend, imgURLs);
+        GridImageAdapter adapter = new GridImageAdapter(getActivity(), R.layout.layout_gridimage, gAppend, imgURLs);
         gridView.setAdapter(adapter);
 
         //set the first image to be displayed when the activity fragment view is inflated
         try{
-            setImage(imgURLs.get(0), galleryImage, mAppend);
-            mSelectedImage = imgURLs.get(0);
+            setImage(imgURLs.get(0), galleryImage, gAppend);
+            gSelectedImage = imgURLs.get(0);
         }catch (ArrayIndexOutOfBoundsException e){
             Log.e(TAG, "setupGridView: ArrayIndexOutOfBoundsException: " +e.getMessage() );
         }
@@ -176,8 +172,8 @@ public class GalleryFragment extends Fragment {
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 Log.d(TAG, "onItemClick: selected an image: " + imgURLs.get(position));
 
-                setImage(imgURLs.get(position), galleryImage, mAppend);
-                mSelectedImage = imgURLs.get(position);
+                setImage(imgURLs.get(position), galleryImage, gAppend);
+                gSelectedImage = imgURLs.get(position);
             }
         });
 
@@ -185,29 +181,29 @@ public class GalleryFragment extends Fragment {
 
 
     private void setImage(String imgURL, ImageView image, String append){
-        Log.d(TAG, "setImage: setting image");
+        Log.d(TAG, "setImage: set image");
 
         ImageLoader imageLoader = ImageLoader.getInstance();
 
         imageLoader.displayImage(append + imgURL, image, new ImageLoadingListener() {
             @Override
             public void onLoadingStarted(String imageUri, View view) {
-                mProgressBar.setVisibility(View.VISIBLE);
+                gProgressBar.setVisibility(View.VISIBLE);
             }
 
             @Override
             public void onLoadingFailed(String imageUri, View view, FailReason failReason) {
-                mProgressBar.setVisibility(View.INVISIBLE);
+                gProgressBar.setVisibility(View.INVISIBLE);
             }
 
             @Override
             public void onLoadingComplete(String imageUri, View view, Bitmap loadedImage) {
-                mProgressBar.setVisibility(View.INVISIBLE);
+                gProgressBar.setVisibility(View.INVISIBLE);
             }
 
             @Override
             public void onLoadingCancelled(String imageUri, View view) {
-                mProgressBar.setVisibility(View.INVISIBLE);
+                gProgressBar.setVisibility(View.INVISIBLE);
             }
         });
     }

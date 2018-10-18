@@ -25,8 +25,6 @@ import com.google.firebase.database.Query;
 import com.google.firebase.database.ValueEventListener;
 import com.nostra13.universalimageloader.core.ImageLoader;
 
-import java.lang.reflect.Array;
-import java.security.PolicySpi;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
@@ -45,9 +43,6 @@ import piapro.github.io.instax.FirebaseModels.Photo;
 import piapro.github.io.instax.FirebaseModels.User;
 import piapro.github.io.instax.FirebaseModels.UserAccountSettings;
 
-/**
- * Created by User on 9/22/2017.
- */
 
 public class MainfeedListAdapter extends ArrayAdapter<Photo> {
 

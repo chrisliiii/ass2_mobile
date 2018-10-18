@@ -23,24 +23,24 @@ public class SignOutFragment extends Fragment{
 
     private static final String TAG = "SignOutFragment";
 
-    private FirebaseAuth mAuth;
-    private FirebaseAuth.AuthStateListener mAuthListener;
+    private FirebaseAuth sAuth;
+    private FirebaseAuth.AuthStateListener sAuthListener;
 
-    private ProgressBar mProgressBar;
-    private TextView tvSignout, tvSigningOut;
+    private ProgressBar sProgressBar;
+    private TextView sSignout, sSigningOut;
 
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_signout, container,false);
 
-        tvSignout = (TextView) view.findViewById(R.id.confirm_signout);
-        mProgressBar = (ProgressBar) view.findViewById(R.id.progressBar);
-        tvSigningOut = (TextView) view.findViewById(R.id.signing_out);
+        sSignout = (TextView) view.findViewById(R.id.confirm_signout);
+        sProgressBar = (ProgressBar) view.findViewById(R.id.progressBar);
+        sSigningOut = (TextView) view.findViewById(R.id.signing_out);
         Button btnConfirmSignout = (Button) view.findViewById(R.id.botton_confirm_signout);
 
-        mProgressBar.setVisibility(View.GONE);
-        tvSigningOut.setVisibility(View.GONE);
+        sProgressBar.setVisibility(View.GONE);
+        sSigningOut.setVisibility(View.GONE);
 
         setupFirebaseAuth();
 
@@ -48,10 +48,10 @@ public class SignOutFragment extends Fragment{
             @Override
             public void onClick(View v) {
                 Log.d(TAG, "onClick: attempting to sign out.");
-                mProgressBar.setVisibility(View.VISIBLE);
-                tvSigningOut.setVisibility(View.VISIBLE);
+                sProgressBar.setVisibility(View.VISIBLE);
+                sSigningOut.setVisibility(View.VISIBLE);
 
-                mAuth.signOut();
+                sAuth.signOut();
                 getActivity().finish();
             }
         });
@@ -64,9 +64,9 @@ public class SignOutFragment extends Fragment{
     private void setupFirebaseAuth(){
         Log.d(TAG, "setupFirebaseAuth: setting up firebase auth.");
 
-        mAuth = FirebaseAuth.getInstance();
+        sAuth = FirebaseAuth.getInstance();
 
-        mAuthListener = new FirebaseAuth.AuthStateListener() {
+        sAuthListener = new FirebaseAuth.AuthStateListener() {
             @Override
             public void onAuthStateChanged(@NonNull FirebaseAuth firebaseAuth) {
                 FirebaseUser user = firebaseAuth.getCurrentUser();
@@ -83,7 +83,6 @@ public class SignOutFragment extends Fragment{
                     intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
                     startActivity(intent);
                 }
-                // ...
             }
         };
     }
@@ -91,14 +90,14 @@ public class SignOutFragment extends Fragment{
     @Override
     public void onStart() {
         super.onStart();
-        mAuth.addAuthStateListener(mAuthListener);
+        sAuth.addAuthStateListener(sAuthListener);
     }
 
     @Override
     public void onStop() {
         super.onStop();
-        if (mAuthListener != null) {
-            mAuth.removeAuthStateListener(mAuthListener);
+        if (sAuthListener != null) {
+            sAuth.removeAuthStateListener(sAuthListener);
         }
     }
 }

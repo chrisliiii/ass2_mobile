@@ -19,34 +19,25 @@ import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
-import com.google.firebase.database.Query;
 import com.google.firebase.database.ValueEventListener;
 
 import piapro.github.io.instax.Utilities.MethodFirebase;
 import piapro.github.io.instax.R;
-import piapro.github.io.instax.Utilities.MethodFirebase;
 import piapro.github.io.instax.Utilities.LoadUniversalImage;
-import piapro.github.io.instax.FirebaseModels.User;
 
-/**
- * Created by User on 7/24/2017.
- */
 
 public class NextActivity extends AppCompatActivity {
     private static final String TAG = "NextActivity";
 
     //firebase
-    private FirebaseAuth mAuth;
-    private FirebaseAuth.AuthStateListener mAuthListener;
-    private FirebaseDatabase mFirebaseDatabase;
-    private DatabaseReference myRef;
-    private MethodFirebase mFirebaseMethods;
+    private FirebaseAuth nAuth;
+    private FirebaseAuth.AuthStateListener nAuthListener;
+    private FirebaseDatabase nFirebaseDatabase;
+    private DatabaseReference nRef;
+    private MethodFirebase nMethodFirebase;
+    private EditText nCaption;
 
-    //widgets
-    private EditText mCaption;
-
-    //vars
-    private String mAppend = "file:/";
+    private String nAppend = "file:/";
     private int imageCount = 0;
     private String imgUrl;
     private Bitmap bitmap;
@@ -56,8 +47,8 @@ public class NextActivity extends AppCompatActivity {
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_next);
-        mFirebaseMethods = new MethodFirebase(NextActivity.this);
-        mCaption = (EditText) findViewById(R.id.caption) ;
+        nMethodFirebase = new MethodFirebase(NextActivity.this);
+        nCaption = (EditText) findViewById(R.id.caption) ;
 
         setupFirebaseAuth();
 
@@ -65,7 +56,7 @@ public class NextActivity extends AppCompatActivity {
         backArrow.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Log.d(TAG, "onClick: closing the activity");
+                Log.d(TAG, "onClick: close the activity");
                 finish();
             }
         });
@@ -75,18 +66,18 @@ public class NextActivity extends AppCompatActivity {
         share.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Log.d(TAG, "onClick: navigating to the final share screen.");
+                Log.d(TAG, "onClick: navigate to the final share screen.");
                 //upload the image to firebase
-                Toast.makeText(NextActivity.this, "Attempting to upload new photo", Toast.LENGTH_SHORT).show();
-                String caption = mCaption.getText().toString();
+                Toast.makeText(NextActivity.this, "Attempt to upload new photo", Toast.LENGTH_SHORT).show();
+                String caption = nCaption.getText().toString();
 
                 if(intent.hasExtra(getString(R.string.chosen_image))){
                     imgUrl = intent.getStringExtra(getString(R.string.chosen_image));
-                    mFirebaseMethods.uploadNewPhoto(getString(R.string.new_photo), caption, imageCount, imgUrl,null);
+                    nMethodFirebase.uploadNewPhoto(getString(R.string.new_photo), caption, imageCount, imgUrl,null);
                 }
                 else if(intent.hasExtra(getString(R.string.chosen_bitmap))){
                     bitmap = (Bitmap) intent.getParcelableExtra(getString(R.string.chosen_bitmap));
-                    mFirebaseMethods.uploadNewPhoto(getString(R.string.new_photo), caption, imageCount, null,bitmap);
+                    nMethodFirebase.uploadNewPhoto(getString(R.string.new_photo), caption, imageCount, null,bitmap);
                 }
 
 
@@ -97,26 +88,7 @@ public class NextActivity extends AppCompatActivity {
         setImage();
     }
 
-    private void someMethod(){
-        /*
-            Step 1)
-            Create a data model for Photos
-            Step 2)
-            Add properties to the Photo Objects (caption, date, imageUrl, photo_id, tags, user_id)
-            Step 3)
-            Count the number of photos that the user already has.
-            Step 4)
-            a) Upload the photo to Firebase Storage
-            b) insert into 'photos' node
-            c) insert into 'user_photos' node
-         */
 
-    }
-
-
-    /**
-     * gets the image url from the incoming intent and displays the chosen image
-     */
     private void setImage(){
         intent = getIntent();
         ImageView image = (ImageView) findViewById(R.id.photoShare);
@@ -124,7 +96,7 @@ public class NextActivity extends AppCompatActivity {
         if(intent.hasExtra(getString(R.string.chosen_image))){
             imgUrl = intent.getStringExtra(getString(R.string.chosen_image));
             Log.d(TAG, "setImage: got new image url: " + imgUrl);
-            LoadUniversalImage.setImage(imgUrl, image, null, mAppend);
+            LoadUniversalImage.setImage(imgUrl, image, null, nAppend);
         }
         else if(intent.hasExtra(getString(R.string.chosen_bitmap))){
             bitmap = (Bitmap) intent.getParcelableExtra(getString(R.string.chosen_bitmap));
@@ -133,21 +105,15 @@ public class NextActivity extends AppCompatActivity {
         }
     }
 
-     /*
-     ------------------------------------ Firebase ---------------------------------------------
-     */
-
-    /**
-     * Setup the firebase auth object
-     */
+    //firebase part
     private void setupFirebaseAuth(){
         Log.d(TAG, "setupFirebaseAuth: setting up firebase auth.");
-        mAuth = FirebaseAuth.getInstance();
-        mFirebaseDatabase = FirebaseDatabase.getInstance();
-        myRef = mFirebaseDatabase.getReference();
+        nAuth = FirebaseAuth.getInstance();
+        nFirebaseDatabase = FirebaseDatabase.getInstance();
+        nRef = nFirebaseDatabase.getReference();
         Log.d(TAG, "onDataChange: image count: " + imageCount);
 
-        mAuthListener = new FirebaseAuth.AuthStateListener() {
+        nAuthListener = new FirebaseAuth.AuthStateListener() {
             @Override
             public void onAuthStateChanged(@NonNull FirebaseAuth firebaseAuth) {
                 FirebaseUser user = firebaseAuth.getCurrentUser();
@@ -165,11 +131,11 @@ public class NextActivity extends AppCompatActivity {
         };
 
 
-        myRef.addValueEventListener(new ValueEventListener() {
+        nRef.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
 
-                imageCount = mFirebaseMethods.getImageCount(dataSnapshot);
+                imageCount = nMethodFirebase.getImageCount(dataSnapshot);
                 Log.d(TAG, "onDataChange: image count: " + imageCount);
 
             }
@@ -185,14 +151,14 @@ public class NextActivity extends AppCompatActivity {
     @Override
     public void onStart() {
         super.onStart();
-        mAuth.addAuthStateListener(mAuthListener);
+        nAuth.addAuthStateListener(nAuthListener);
     }
 
     @Override
     public void onStop() {
         super.onStop();
-        if (mAuthListener != null) {
-            mAuth.removeAuthStateListener(mAuthListener);
+        if (nAuthListener != null) {
+            nAuth.removeAuthStateListener(nAuthListener);
         }
     }
 }

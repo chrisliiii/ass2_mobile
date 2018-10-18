@@ -30,76 +30,80 @@ public class RegisterActivity extends AppCompatActivity {
 
     private static final String TAG = "RegisterActivity";
 
-    private Context mContext;
     private String email, username, password;
-    private EditText mEmail, mPassword, mUsername;
-    private TextView loadingPleaseWait;
-    private Button btnRegister;
-    private ProgressBar mProgressBar;
+    private EditText rEmail, rPassword, rUsername;
+
+    private Context rContext;
+
+    private TextView loadPleaseWait;
+    private Button buttonRegister;
+    private ProgressBar rProgressBar;
 
     //firebase
-    private FirebaseAuth mAuth;
-    private FirebaseAuth.AuthStateListener mAuthListener;
-    private MethodFirebase firebaseMethods;
-    private FirebaseDatabase mFirebaseDatabase;
-    private DatabaseReference myRef;
+    private FirebaseAuth rAuth;
+    private FirebaseAuth.AuthStateListener rAuthListener;
+    private MethodFirebase methodFirebase;
+    private FirebaseDatabase rFirebaseDatabase;
+    private DatabaseReference rRef;
 
     private String append = "";
 
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_register);
-        mContext = RegisterActivity.this;
-        firebaseMethods = new MethodFirebase(mContext);
-        Log.d(TAG, "onCreate: started.");
 
-        initWidgets();
+        rContext = RegisterActivity.this;
+        methodFirebase = new MethodFirebase(rContext);
+
+        Log.d(TAG, "onCreate: start.");
+
+        initTools();
         setupFirebaseAuth();
-        init();
+        initReg();
     }
 
-    private void init(){
-        btnRegister.setOnClickListener(new View.OnClickListener() {
+    private void initReg(){
+        buttonRegister.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                email = mEmail.getText().toString();
-                username = mUsername.getText().toString();
-                password = mPassword.getText().toString();
+                email = rEmail.getText().toString();
+                username = rUsername.getText().toString();
+                password = rPassword.getText().toString();
 
                 if(checkInputs(email, username, password)){
-                    mProgressBar.setVisibility(View.VISIBLE);
-                    loadingPleaseWait.setVisibility(View.VISIBLE);
+                    rProgressBar.setVisibility(View.VISIBLE);
+                    loadPleaseWait.setVisibility(View.VISIBLE);
 
-                    firebaseMethods.registerNewEmail(email, password, username);
+                    methodFirebase.registerNewEmail(email, password, username);
                 }
             }
         });
     }
 
     private boolean checkInputs(String email, String username, String password){
-        Log.d(TAG, "checkInputs: checking inputs for null values.");
+        Log.d(TAG, "checkInputs: check if inputs has null values.");
         if(email.equals("") || username.equals("") || password.equals("")){
-            Toast.makeText(mContext, "All fields must be filled out.", Toast.LENGTH_SHORT).show();
+            Toast.makeText(rContext, "All fields need to filled out.", Toast.LENGTH_SHORT).show();
             return false;
         }
         return true;
     }
-    /**
-     * Initialize the activity widgets
-     */
-    private void initWidgets(){
-        Log.d(TAG, "initWidgets: Initializing Widgets.");
-        mEmail = (EditText) findViewById(R.id.email_input);
-        mUsername = (EditText) findViewById(R.id.username_input);
-        btnRegister = (Button) findViewById(R.id.button_register);
-        mProgressBar = (ProgressBar) findViewById(R.id.progress_bar);
-        loadingPleaseWait = (TextView) findViewById(R.id.loadWaitPlease);
-        mPassword = (EditText) findViewById(R.id.password_input);
-        mContext = RegisterActivity.this;
-        mProgressBar.setVisibility(View.GONE);
-        loadingPleaseWait.setVisibility(View.GONE);
+
+    //initialize tools
+    private void initTools(){
+        Log.d(TAG, "initTools: Initializing Widgets.");
+        rEmail = (EditText) findViewById(R.id.email_input);
+        rUsername = (EditText) findViewById(R.id.username_input);
+        buttonRegister = (Button) findViewById(R.id.button_register);
+        rProgressBar = (ProgressBar) findViewById(R.id.progress_bar);
+        loadPleaseWait = (TextView) findViewById(R.id.loadWaitPlease);
+        rPassword = (EditText) findViewById(R.id.password_input);
+        rContext = RegisterActivity.this;
+        rProgressBar.setVisibility(View.GONE);
+        loadPleaseWait.setVisibility(View.GONE);
 
     }
 
@@ -114,14 +118,7 @@ public class RegisterActivity extends AppCompatActivity {
         }
     }
 
-     /*
-    ------------------------------------ Firebase ---------------------------------------------
-     */
-
-    /**
-     * Check is @param username already exists in teh database
-     * @param username
-     */
+    // firebase part
     private void checkIfUsernameExists(final String username) {
         Log.d(TAG, "checkIfUsernameExists: Checking if  " + username + " already exists.");
 
@@ -137,7 +134,7 @@ public class RegisterActivity extends AppCompatActivity {
                 for(DataSnapshot singleSnapshot: dataSnapshot.getChildren()){
                     if (singleSnapshot.exists()){
                         Log.d(TAG, "checkIfUsernameExists: FOUND A MATCH: " + singleSnapshot.getValue(User.class).getUsername());
-                        append = myRef.push().getKey().substring(3,10);
+                        append = rRef.push().getKey().substring(3,10);
                         Log.d(TAG, "onDataChange: username already exists. Appending random string to name: " + append);
                     }
                 }
@@ -146,11 +143,11 @@ public class RegisterActivity extends AppCompatActivity {
                 mUsername = username + append;
 
                 //add new user to the database
-                firebaseMethods.addNewUser(email, mUsername, "", "", "");
+                methodFirebase.addNewUser(email, mUsername, "", "", "");
 
-                Toast.makeText(mContext, "Signup successful. Sending verification email.", Toast.LENGTH_SHORT).show();
+                Toast.makeText(rContext, "Signup successful. Sending verification email.", Toast.LENGTH_SHORT).show();
 
-                mAuth.signOut();
+                rAuth.signOut();
             }
 
             @Override
@@ -160,17 +157,15 @@ public class RegisterActivity extends AppCompatActivity {
         });
     }
 
-    /**
-     * Setup the firebase auth object
-     */
+    //set up firebase authentication
     private void setupFirebaseAuth(){
-        Log.d(TAG, "setupFirebaseAuth: setting up firebase auth.");
+        Log.d(TAG, "setupFirebaseAuth: set up firebase authentication.");
 
-        mAuth = FirebaseAuth.getInstance();
-        mFirebaseDatabase = FirebaseDatabase.getInstance();
-        myRef = mFirebaseDatabase.getReference();
+        rAuth = FirebaseAuth.getInstance();
+        rFirebaseDatabase = FirebaseDatabase.getInstance();
+        rRef = rFirebaseDatabase.getReference();
 
-        mAuthListener = new FirebaseAuth.AuthStateListener() {
+        rAuthListener = new FirebaseAuth.AuthStateListener() {
             @Override
             public void onAuthStateChanged(@NonNull FirebaseAuth firebaseAuth) {
                 FirebaseUser user = firebaseAuth.getCurrentUser();
@@ -179,7 +174,7 @@ public class RegisterActivity extends AppCompatActivity {
                     // User is signed in
                     Log.d(TAG, "onAuthStateChanged:signed_in:" + user.getUid());
 
-                    myRef.addListenerForSingleValueEvent(new ValueEventListener() {
+                    rRef.addListenerForSingleValueEvent(new ValueEventListener() {
                         @Override
                         public void onDataChange(DataSnapshot dataSnapshot) {
                             checkIfUsernameExists(username);
@@ -205,14 +200,14 @@ public class RegisterActivity extends AppCompatActivity {
     @Override
     public void onStart() {
         super.onStart();
-        mAuth.addAuthStateListener(mAuthListener);
+        rAuth.addAuthStateListener(rAuthListener);
     }
 
     @Override
     public void onStop() {
         super.onStop();
-        if (mAuthListener != null) {
-            mAuth.removeAuthStateListener(mAuthListener);
+        if (rAuthListener != null) {
+            rAuth.removeAuthStateListener(rAuthListener);
         }
     }
 }

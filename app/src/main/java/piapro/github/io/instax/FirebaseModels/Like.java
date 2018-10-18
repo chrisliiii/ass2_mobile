@@ -1,9 +1,5 @@
 package piapro.github.io.instax.FirebaseModels;
 
-/**
- * Created by User on 8/21/2017.
- */
-
 public class Like {
 
     private String user_id;

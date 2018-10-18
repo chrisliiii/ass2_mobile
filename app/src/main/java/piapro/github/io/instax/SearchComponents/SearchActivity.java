@@ -38,38 +38,39 @@ public class SearchActivity extends AppCompatActivity{
     private static final String TAG = "SearchActivity";
     private static final int ACTIVITY = 1;
 
-    private Context mContext = SearchActivity.this;
+    private Context sContext = SearchActivity.this;
 
     //widgets
-    private EditText mSearchParam;
-    private ListView mListView;
+    private EditText sSearchParam;
+    private ListView sListView;
 
     //vars
-    private List<User> mUserList;
-    private UserListAdapter mAdapter;
+    private List<User> sUserList;
+    private UserListAdapter sAdapter;
 
     @Override
     //Alt+Insert open Generate Method
     protected void onCreate(@Nullable Bundle savedInstanceState) {
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_search);
-        Log.d(TAG, "onCreate: Started");
+        Log.d(TAG, "onCreate: Start");
 
-        mSearchParam = (EditText) findViewById(R.id.search);
-        mListView = (ListView) findViewById(R.id.listView);
-        bottomNavigationViewSetup();
+        sSearchParam = (EditText) findViewById(R.id.search);
+        sListView = (ListView) findViewById(R.id.listView);
+        btmNaviViewSetup();
 
         hideSoftKeyboard();
-        bottomNavigationViewSetup();
+        btmNaviViewSetup();
         initTextListener();
     }
 
     private void initTextListener(){
-        Log.d(TAG, "initTextListener: initializing");
+        Log.d(TAG, "initTextListener: initialize");
 
-        mUserList = new ArrayList<>();
+        sUserList = new ArrayList<>();
 
-        mSearchParam.addTextChangedListener(new TextWatcher() {
+        sSearchParam.addTextChangedListener(new TextWatcher() {
             @Override
             public void beforeTextChanged(CharSequence s, int start, int count, int after) {
 
@@ -83,15 +84,15 @@ public class SearchActivity extends AppCompatActivity{
             @Override
             public void afterTextChanged(Editable s) {
 
-                String text = mSearchParam.getText().toString().toLowerCase(Locale.getDefault());
-                searchForMatch(text);
+                String text = sSearchParam.getText().toString().toLowerCase(Locale.getDefault());
+                searchMatchName(text);
             }
         });
     }
 
-    private void searchForMatch(String keyword){
-        Log.d(TAG, "searchForMatch: searching for a match: " + keyword);
-        mUserList.clear();
+    private void searchMatchName(String keyword){
+        Log.d(TAG, "searchMatchName: searching for a match: " + keyword);
+        sUserList.clear();
         //update the users list view
         if(keyword.length() ==0){
 
@@ -105,7 +106,7 @@ public class SearchActivity extends AppCompatActivity{
                     for(DataSnapshot singleSnapshot :  dataSnapshot.getChildren()){
                         Log.d(TAG, "onDataChange: found user:" + singleSnapshot.getValue(User.class).toString());
 
-                        mUserList.add(singleSnapshot.getValue(User.class));
+                        sUserList.add(singleSnapshot.getValue(User.class));
                         //update the users list view
                         updateUsersList();
                     }
@@ -122,19 +123,19 @@ public class SearchActivity extends AppCompatActivity{
     private void updateUsersList(){
         Log.d(TAG, "updateUsersList: updating users list");
 
-        mAdapter = new UserListAdapter(SearchActivity.this, R.layout.layout_user_list, mUserList);
+        sAdapter = new UserListAdapter(SearchActivity.this, R.layout.layout_user_list, sUserList);
 
-        mListView.setAdapter(mAdapter);
+        sListView.setAdapter(sAdapter);
 
-        mListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+        sListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                Log.d(TAG, "onItemClick: selected user: " + mUserList.get(position).toString());
+                Log.d(TAG, "onItemClick: selected user: " + sUserList.get(position).toString());
 
                 //navigate to profile activity
                 Intent intent =  new Intent(SearchActivity.this, ProfileActivity.class);
                 intent.putExtra(getString(R.string.activity_call), getString(R.string.search_activity));
-                intent.putExtra(getString(R.string.intent_user), mUserList.get(position));
+                intent.putExtra(getString(R.string.intent_user), sUserList.get(position));
                 startActivity(intent);
             }
         });
@@ -147,14 +148,12 @@ public class SearchActivity extends AppCompatActivity{
         }
     }
 
-    /**
-     * Setup Bottom Navigation View
-     */
-    private void bottomNavigationViewSetup(){
-        Log.d(TAG, "bottomNavigationViewSetup: Bottom Navigation View Setting up");
+    //setup bottom navigation bar
+    private void btmNaviViewSetup(){
+        Log.d(TAG, "btmNaviViewSetup: Bottom Navigation View Setting up");
         BottomNavigationViewEx bottomNavigationViewEx = (BottomNavigationViewEx) findViewById(R.id.bottomNaviBar);
         BottomNavigationViewHelper.bottomNavigationViewSetup(bottomNavigationViewEx);
-        BottomNavigationViewHelper.enableNavigation(mContext, this, bottomNavigationViewEx);//Parse the context
+        BottomNavigationViewHelper.enableNavigation(sContext, this, bottomNavigationViewEx);//Parse the context
         Menu menu = bottomNavigationViewEx.getMenu();
         MenuItem menuItem = menu.getItem(ACTIVITY);
         menuItem.setChecked(true);

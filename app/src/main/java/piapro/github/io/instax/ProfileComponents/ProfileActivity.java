@@ -6,20 +6,10 @@ import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.Toolbar;
 import android.util.Log;
-import android.view.Menu;
-import android.view.MenuItem;
-import android.view.View;
-import android.widget.GridView;
-import android.widget.ImageView;
-import android.widget.ProgressBar;
 import android.widget.Toast;
 
 import com.google.firebase.auth.FirebaseAuth;
-import com.ittianyu.bottomnavigationviewex.BottomNavigationViewEx;
-
-import java.util.ArrayList;
 
 import piapro.github.io.instax.FirebaseModels.Photo;
 import piapro.github.io.instax.FirebaseModels.User;
@@ -27,9 +17,6 @@ import piapro.github.io.instax.R;
 import piapro.github.io.instax.Utilities.ViewCommentsFragment;
 import piapro.github.io.instax.Utilities.ViewPostFragment;
 import piapro.github.io.instax.Utilities.ViewProfileFragment;
-import piapro.github.io.instax.Utilities.BottomNavigationViewHelper;
-import piapro.github.io.instax.Utilities.GridImageAdapter;
-import piapro.github.io.instax.Utilities.LoadUniversalImage;
 
 public class ProfileActivity extends AppCompatActivity implements
         ProfileFragment.OnGridImageSelectedListener ,
@@ -37,6 +24,9 @@ public class ProfileActivity extends AppCompatActivity implements
         ViewProfileFragment.OnGridImageSelectedListener{
 
     private static final String TAG = "ProfileActivity";
+
+    private Context mContext = ProfileActivity.this;
+
 
     @Override
     public void onCommentThreadSelectedListener(Photo photo) {
@@ -72,36 +62,26 @@ public class ProfileActivity extends AppCompatActivity implements
     }
 
 
-    private static final int ACTIVITY_NUM = 4;
-    private static final int NUM_GRID_COLUMNS = 3;
-
-    private Context mContext = ProfileActivity.this;
-
-    private ProgressBar mProgressBar;
-    private ImageView profilePhoto;
-
-
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_profile);
         Log.d(TAG, "onCreate: started.");
 
-        init();
-
+        initProfile();
 
     }
 
-    private void init(){
-        Log.d(TAG, "init: inflating " + getString(R.string.profile_fragment));
+    private void initProfile(){
+        Log.d(TAG, "initProfile: inflate " + getString(R.string.profile_fragment));
 
         Intent intent = getIntent();
         if(intent.hasExtra(getString(R.string.activity_call))){
-            Log.d(TAG, "init: searching for user object attached as intent extra");
+            Log.d(TAG, "initProfile: search for user object attached as intent extra");
             if(intent.hasExtra(getString(R.string.intent_user))){
                 User user = intent.getParcelableExtra(getString(R.string.intent_user));
                 if(!user.getUser_id().equals(FirebaseAuth.getInstance().getCurrentUser().getUid())){
-                    Log.d(TAG, "init: inflating view profile");
+                    Log.d(TAG, "initProfile: inflate view profile");
                     ViewProfileFragment fragment = new ViewProfileFragment();
                     Bundle args = new Bundle();
                     args.putParcelable(getString(R.string.intent_user),
@@ -113,7 +93,7 @@ public class ProfileActivity extends AppCompatActivity implements
                     transaction.addToBackStack(getString(R.string.viewProfile_fragment));
                     transaction.commit();
                 }else{
-                    Log.d(TAG, "init: inflating Profile");
+                    Log.d(TAG, "initProfile: inflate Profile");
                     ProfileFragment fragment = new ProfileFragment();
                     FragmentTransaction transaction = ProfileActivity.this.getSupportFragmentManager().beginTransaction();
                     transaction.replace(R.id.container, fragment);
@@ -125,7 +105,7 @@ public class ProfileActivity extends AppCompatActivity implements
             }
 
         }else{
-            Log.d(TAG, "init: inflating Profile");
+            Log.d(TAG, "initProfile: inflate Profile");
             ProfileFragment fragment = new ProfileFragment();
             FragmentTransaction transaction = ProfileActivity.this.getSupportFragmentManager().beginTransaction();
             transaction.replace(R.id.container, fragment);
@@ -136,5 +116,3 @@ public class ProfileActivity extends AppCompatActivity implements
     }
 
 }
-
-

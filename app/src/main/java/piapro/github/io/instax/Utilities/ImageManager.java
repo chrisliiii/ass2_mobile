@@ -10,10 +10,6 @@ import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 
-/**
- * Created by User on 7/29/2017.
- */
-
 public class ImageManager {
 
     private static final String TAG = "ImageManager";
@@ -37,13 +33,6 @@ public class ImageManager {
         return bitmap;
     }
 
-    /**
-     * return byte array from a bitmap
-     * quality is greater than 0 but less than 100
-     * @param bm
-     * @param quality
-     * @return
-     */
     public static byte[] getBytesFromBitmap(Bitmap bm, int quality){
         ByteArrayOutputStream stream = new ByteArrayOutputStream();
         bm.compress(Bitmap.CompressFormat.JPEG, quality, stream);
