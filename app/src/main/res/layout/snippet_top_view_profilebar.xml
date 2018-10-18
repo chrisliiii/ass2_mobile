@@ -36,10 +36,10 @@
                     android:id="@+id/username"
                     android:layout_centerVertical="true"
                     android:layout_toRightOf="@+id/backArrow"
-                    android:textSize="20sp"
+                    android:textSize="24sp"
                     android:textColor="@color/black"
-                    android:layout_marginStart="10dp"
-                    android:text="mitch.tabian"/>
+                    android:layout_marginStart="5dp"
+                    android:text="chris"/>
 
 
 

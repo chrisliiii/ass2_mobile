@@ -132,7 +132,7 @@ public class HomeActivity extends AppCompatActivity implements
         tabLayout.setupWithViewPager(mViewPager);
 
         tabLayout.getTabAt(0).setIcon(R.drawable.ic_camera);
-        tabLayout.getTabAt(1).setIcon(R.drawable.ic_instax);
+        tabLayout.getTabAt(1).setText(getString(R.string.app_name));
         tabLayout.getTabAt(2).setIcon(R.drawable.ic_direct);
     }
 

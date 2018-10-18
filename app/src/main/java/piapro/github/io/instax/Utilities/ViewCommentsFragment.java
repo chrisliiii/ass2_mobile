@@ -295,7 +295,7 @@ public class ViewCommentsFragment extends Fragment {
                                     mComments.add(firstComment);
 
                                     for (DataSnapshot dSnapshot : singleSnapshot
-                                           .child(mContext.getString(R.string.fd_comments)).getChildren()){
+                                            .child(mContext.getString(R.string.fd_comments)).getChildren()){
                                         Comment comment = new Comment();
                                         comment.setUser_id(dSnapshot.getValue(Comment.class).getUser_id());
                                         comment.setComment(dSnapshot.getValue(Comment.class).getComment());
@@ -307,7 +307,7 @@ public class ViewCommentsFragment extends Fragment {
 
                                     mPhoto = photo;
 
-                                   setupWidgets();
+                                    setupWidgets();
 //                    List<Like> likesList = new ArrayList<Like>();
 //                    for (DataSnapshot dSnapshot : singleSnapshot
 //                            .child(getString(R.string.field_likes)).getChildren()){
@@ -316,37 +316,37 @@ public class ViewCommentsFragment extends Fragment {
 //                        likesList.add(like);
 //                    }
 
-                                       }
+                                }
 
-                                   }
+                            }
 
-                                   @Override
-                                   public void onCancelled(DatabaseError databaseError) {
-                                       Log.d(TAG, "onCancelled: query cancelled.");
-                                   }
-                               });
-                           }
+                            @Override
+                            public void onCancelled(DatabaseError databaseError) {
+                                Log.d(TAG, "onCancelled: query cancelled.");
+                            }
+                        });
+                    }
 
-                           @Override
-                           public void onChildChanged(DataSnapshot dataSnapshot, String s) {
+                    @Override
+                    public void onChildChanged(DataSnapshot dataSnapshot, String s) {
 
-                           }
+                    }
 
-                           @Override
-                           public void onChildRemoved(DataSnapshot dataSnapshot) {
+                    @Override
+                    public void onChildRemoved(DataSnapshot dataSnapshot) {
 
-                           }
+                    }
 
-                           @Override
-                           public void onChildMoved(DataSnapshot dataSnapshot, String s) {
+                    @Override
+                    public void onChildMoved(DataSnapshot dataSnapshot, String s) {
 
-                           }
+                    }
 
-                           @Override
-                           public void onCancelled(DatabaseError databaseError) {
+                    @Override
+                    public void onCancelled(DatabaseError databaseError) {
 
-                           }
-                       });
+                    }
+                });
 
 
 
@@ -368,24 +368,3 @@ public class ViewCommentsFragment extends Fragment {
     }
 
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

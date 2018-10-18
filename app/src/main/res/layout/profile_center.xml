@@ -82,7 +82,7 @@
                     android:id="@+id/web"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:textColor="@color/black"
+                    android:textColor="@color/blue"
                     android:textSize="18dp"
                     android:text="https://chrisli.com"
                     android:layout_marginLeft="10dp"

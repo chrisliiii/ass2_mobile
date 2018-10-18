@@ -48,7 +48,9 @@ public class HomeFragment extends Fragment {
         mFollowing = new ArrayList<>();
         mPhotos = new ArrayList<>();
 
-        getFollowing();
+        if (FirebaseAuth.getInstance().getCurrentUser().getUid() != null) {
+            getFollowing();
+        }
 
         return view;
     }
