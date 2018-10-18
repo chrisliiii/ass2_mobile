@@ -1,0 +1,70 @@
+<resources>
+    <string name="app_name">instax</string>
+
+    <!--pop-up window name-->
+    <string name="confirm_password_window">Confirm Password Window</string>
+
+    <!--fragment name-->
+    <string name="profile_fragment">Profile Fragment</string>
+    <string name="viewProfile_fragment">View Profile</string>
+    <string name="viewPost_fragment">View Post</string>
+    <string name="viewComments_fragment">View Comments</string>
+    <string name="edit_profile">Edit Profile</string>
+    <string name="sign_out">Sign Out</string>
+
+    <!--activity name-->
+    <string name="home_activity">Home Activity</string>
+    <string name="search_activity">Search Activity</string>
+    <string name="profile_activity">Profile Activity</string>
+
+    <!--intent name-->
+    <string name="activity_call">activity_call</string>
+    <string name="intent_user">intent_user</string>
+    <string name="backTo_fragment">back_to_fragment</string>
+    <string name="chosen_image">chosen_image</string>
+    <string name="chosen_bitmap">chosen_bitmap</string>
+
+    <!--picture name-->
+    <string name="profile_photo">profile_photo</string>
+    <string name="new_photo">new_photo</string>
+
+    <!--argument string-->
+    <string name="activity_number">activity_number</string>
+    <string name="bind_photo">bind_photo</string>
+    <string name="bind_userAccountSettings">bind_user_account_settings</string>
+
+    <!-- Firebase Authentication -->
+    <string name="auth_failed">Authenticate Failed</string>
+    <string name="auth_success">Authentication Success</string>
+
+    <!-- Firebase database -->
+    <string name="db_users">users</string>
+    <string name="db_user_account_settings">user_account_settings</string>
+    <string name="db_photos">photos</string>
+    <string name="db_user_photos">user_photos</string>
+    <string name="db_followers">followers</string>
+    <string name="db_following">following</string>
+    <string name="fd_user_id">user_id</string>
+    <string name="fd_username">username</string>
+    <string name="fd_display_name">display_name</string>
+    <string name="field_email">email</string>
+    <string name="fd_bio">description</string>
+    <string name="fd_web">website</string>
+    <string name="fd_phone_number">phone_number</string>
+    <string name="fd_caption">caption</string>
+    <string name="fd_tags">tags</string>
+    <string name="fd_likes">likes</string>
+    <string name="fd_comments">comments</string>
+    <string name="fd_photo_id">photo_id</string>
+    <string name="fd_image_path">image_path</string>
+    <string name="fd_create_date">date_created</string>
+
+    <!-- other string -->
+    <string name="photo">PHOTO</string>
+    <string name="gallery">GALLERY</string>
+    <string name="share_string">Share</string>
+    <string name="openCamera_string">Open Camera</string>
+    <string name="next_String">Next</string>
+
+
+</resources>

@@ -1,0 +1,47 @@
+<merge
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    >
+
+    <android.support.design.widget.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="@drawable/canvas_bottom_navibar"
+        >
+
+        <android.support.v7.widget.Toolbar
+            android:id="@+id/nextToolBar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+           >
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <ImageView
+                    android:id="@+id/nextArrowBack"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_marginEnd="20dp"
+                    android:layout_centerVertical="true"
+                    android:src="@drawable/ic_arrowback"/>
+
+
+                <TextView
+                    android:id="@+id/next"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginRight="15dp"
+                    android:text="@string/share_string"
+                    android:textColor="@color/blue"
+                    android:textSize="20sp"
+                    android:layout_centerVertical="true" />
+
+            </RelativeLayout>
+
+        </android.support.v7.widget.Toolbar>
+
+    </android.support.design.widget.AppBarLayout>
+
+</merge>

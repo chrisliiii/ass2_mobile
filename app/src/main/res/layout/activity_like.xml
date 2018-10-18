@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+
+    >
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <!--Top Relative Layout for Tool Bar-->
+        <RelativeLayout
+            android:id="@+id/TopLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <!-- This will refer to the layout_top_toolbar.xml file -->
+            <include layout="@layout/layout_top_toolbar" />
+
+        </RelativeLayout>
+
+
+        <!--Middle Relative Layout for Content Viewer-->
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/MiddleLayout"
+            android:layout_below="@+id/TopLayout">
+            <include layout="@layout/layout_middle_contentviewer"/>
+
+        </RelativeLayout>
+
+        <!--Bottom Relative Layout for Navigation Bar-->
+        <include layout="@layout/layout_bottom_navibar"/>
+
+    </RelativeLayout>
+
+</android.support.design.widget.CoordinatorLayout>
+

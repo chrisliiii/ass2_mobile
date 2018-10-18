@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "423818859562",
+    "firebase_url": "https://instax-001.firebaseio.com",
+    "project_id": "instax-001",
+    "storage_bucket": "instax-001.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:423818859562:android:492c4c7650b494a5",
+        "android_client_info": {
+          "package_name": "piapro.github.io.instax"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "423818859562-6kgf3b0vg0m0tem3n36ufbqfnv15c5ch.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "piapro.github.io.instax",
+            "certificate_hash": "fa0cabb56979dfe3da67830b884187f1258e7e41"
+          }
+        },
+        {
+          "client_id": "423818859562-b8ded99l71bga16d833esd11k0ehktjb.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDVl_BuEixDMhebi3OMRqzOFT9C8EDG65g"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "423818859562-b8ded99l71bga16d833esd11k0ehktjb.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
