@@ -10,17 +10,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f81c887d-6444-470f-8786-52422dff22f3" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/app/app.iml" afterPath="$PROJECT_DIR$/app/app.iml" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/piapro/github/io/instax/HomeComponents/HomeActivity.java" afterPath="$PROJECT_DIR$/app/src/main/java/piapro/github/io/instax/HomeComponents/HomeActivity.java" />
+      <change beforePath="$PROJECT_DIR$/.gradle/4.4/fileHashes/fileHashes.bin" afterPath="$PROJECT_DIR$/.gradle/4.4/fileHashes/fileHashes.bin" />
+      <change beforePath="$PROJECT_DIR$/.gradle/4.4/fileHashes/fileHashes.lock" afterPath="$PROJECT_DIR$/.gradle/4.4/fileHashes/fileHashes.lock" />
+      <change beforePath="$PROJECT_DIR$/.gradle/4.4/javaCompile/classAnalysis.bin" afterPath="$PROJECT_DIR$/.gradle/4.4/javaCompile/classAnalysis.bin" />
+      <change beforePath="$PROJECT_DIR$/.gradle/4.4/javaCompile/javaCompile.lock" afterPath="$PROJECT_DIR$/.gradle/4.4/javaCompile/javaCompile.lock" />
+      <change beforePath="$PROJECT_DIR$/.gradle/4.4/taskHistory/taskHistory.bin" afterPath="$PROJECT_DIR$/.gradle/4.4/taskHistory/taskHistory.bin" />
+      <change beforePath="$PROJECT_DIR$/.gradle/4.4/taskHistory/taskHistory.lock" afterPath="$PROJECT_DIR$/.gradle/4.4/taskHistory/taskHistory.lock" />
+      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/piapro/github/io/instax/HomeComponents/HomeFragment.java" afterPath="$PROJECT_DIR$/app/src/main/java/piapro/github/io/instax/HomeComponents/HomeFragment.java" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/piapro/github/io/instax/SearchComponents/SearchActivity.java" afterPath="$PROJECT_DIR$/app/src/main/java/piapro/github/io/instax/SearchComponents/SearchActivity.java" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/piapro/github/io/instax/Utilities/ViewCommentsFragment.java" afterPath="$PROJECT_DIR$/app/src/main/java/piapro/github/io/instax/Utilities/ViewCommentsFragment.java" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/piapro/github/io/instax/Utilities/ViewProfileFragment.java" afterPath="$PROJECT_DIR$/app/src/main/java/piapro/github/io/instax/Utilities/ViewProfileFragment.java" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/layout_center_view_profile.xml" afterPath="$PROJECT_DIR$/app/src/main/res/layout/layout_center_view_profile.xml" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/profile_center.xml" afterPath="$PROJECT_DIR$/app/src/main/res/layout/profile_center.xml" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/snippet_top_view_profile.xml" afterPath="$PROJECT_DIR$/app/src/main/res/layout/snippet_top_view_profile.xml" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/snippet_top_view_profilebar.xml" afterPath="$PROJECT_DIR$/app/src/main/res/layout/snippet_top_view_profilebar.xml" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/top_profile_info.xml" afterPath="$PROJECT_DIR$/app/src/main/res/layout/top_profile_info.xml" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -36,11 +34,21 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="ViewCommentsFragment.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="ViewCommentsFragment.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/piapro/github/io/instax/Utilities/ViewCommentsFragment.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="-239">
               <caret line="135" column="0" lean-forward="false" selection-start-line="135" selection-start-column="0" selection-end-line="135" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="HomeFragment.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/piapro/github/io/instax/HomeComponents/HomeFragment.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="265">
+              <caret line="57" column="0" lean-forward="true" selection-start-line="57" selection-start-column="0" selection-end-line="57" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -2137,7 +2145,6 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/app/src/main/java/piapro/github/io/instax/SearchComponents/SearchActivity.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/piapro/github/io/instax/HomeComponents/HomeFragment.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/piapro/github/io/instax/HomeComponents/HomeActivity.java" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/snippet_top_view_profilebar.xml" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/snippet_top_view_profile.xml" />
@@ -2146,11 +2153,12 @@
         <option value="$PROJECT_DIR$/app/src/main/res/layout/layout_center_view_profile.xml" />
         <option value="$PROJECT_DIR$/app/src/main/java/piapro/github/io/instax/Utilities/ViewProfileFragment.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/piapro/github/io/instax/Utilities/ViewCommentsFragment.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/piapro/github/io/instax/HomeComponents/HomeFragment.java" />
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="1">
-    <option name="x" value="99" />
+  <component name="ProjectFrameBounds">
+    <option name="x" value="32" />
     <option name="y" value="23" />
     <option name="width" value="1125" />
     <option name="height" value="811" />
@@ -2218,6 +2226,13 @@
               <item name="app" type="feadf853:AndroidModuleNode" />
               <item name="java" type="edd41e36:AndroidSourceTypeNode" />
               <item name="instax" type="cbb59c9e:AndroidPsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="ass2_mobile" type="1abcf292:AndroidViewProjectNode" />
+              <item name="app" type="feadf853:AndroidModuleNode" />
+              <item name="java" type="edd41e36:AndroidSourceTypeNode" />
+              <item name="instax" type="cbb59c9e:AndroidPsiDirectoryNode" />
+              <item name="HomeComponents" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="ass2_mobile" type="1abcf292:AndroidViewProjectNode" />
@@ -2422,7 +2437,7 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="99" y="23" width="1125" height="811" extended-state="1" />
+    <frame x="32" y="23" width="1125" height="811" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Android Profiler" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -2433,7 +2448,7 @@
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32963988" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32960895" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32960895" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32960895" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Logcat" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32960895" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -2608,17 +2623,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/piapro/github/io/instax/HomeComponents/HomeFragment.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="69" column="49" lean-forward="false" selection-start-line="69" selection-start-column="49" selection-end-line="69" selection-end-column="79" />
-          <folding>
-            <element signature="imports" expanded="false" />
-            <element signature="e#2562#2592#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/piapro/github/io/instax/HomeComponents/HomeActivity.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="210">
@@ -2787,6 +2791,14 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-239">
           <caret line="135" column="0" lean-forward="false" selection-start-line="135" selection-start-column="0" selection-end-line="135" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/piapro/github/io/instax/HomeComponents/HomeFragment.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="265">
+          <caret line="57" column="0" lean-forward="true" selection-start-line="57" selection-start-column="0" selection-end-line="57" selection-end-column="0" />
           <folding />
         </state>
       </provider>

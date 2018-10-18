@@ -48,7 +48,8 @@ public class HomeFragment extends Fragment {
         mFollowing = new ArrayList<>();
         mPhotos = new ArrayList<>();
 
-        if (FirebaseAuth.getInstance().getCurrentUser().getUid() != null) {
+
+        if (FirebaseAuth.getInstance().getCurrentUser() != null) {
             getFollowing();
         }
 
@@ -59,6 +60,7 @@ public class HomeFragment extends Fragment {
         Log.d(TAG, "getFollowing: searching for following");
 
         DatabaseReference reference = FirebaseDatabase.getInstance().getReference();
+
         Query query = reference
                 .child(getString(R.string.db_following))
                 .child(FirebaseAuth.getInstance().getCurrentUser().getUid());
