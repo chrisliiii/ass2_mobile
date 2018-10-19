@@ -103,7 +103,7 @@ public class ViewCommentsFragment extends Fragment {
             public void onClick(View v) {
 
                 if(!vComment.getText().toString().equals("")){
-                    Log.d(TAG, "onClick: attempting to submit new comment.");
+                    Log.d(TAG, "onClick: attempt to submit new comment.");
                     addComment(vComment.getText().toString());
 
                     vComment.setText("");
@@ -117,7 +117,7 @@ public class ViewCommentsFragment extends Fragment {
         vArrowBack.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Log.d(TAG, "onClick: navigating back");
+                Log.d(TAG, "onClick: navigate back");
                 if(getActivityCallFromBundle().equals(getString(R.string.home_activity))){
                     getActivity().getSupportFragmentManager().popBackStack();
                     ((HomeActivity)getActivity()).showLayout();
@@ -139,7 +139,7 @@ public class ViewCommentsFragment extends Fragment {
 
 
     private void addComment(String newComment){
-        Log.d(TAG, "addComment: adding new comment: " + newComment);
+        Log.d(TAG, "addComment: add new comment: " + newComment);
 
         String commentID = vRef.push().getKey();
 
@@ -197,7 +197,7 @@ public class ViewCommentsFragment extends Fragment {
 
     //firebase part
     private void setupFirebaseAuth(){
-        Log.d(TAG, "setupFirebaseAuth: setting up firebase auth.");
+        Log.d(TAG, "setupFirebaseAuth: set up firebase auth.");
 
         vAuth = FirebaseAuth.getInstance();
         vFirebaseDatabase = FirebaseDatabase.getInstance();
