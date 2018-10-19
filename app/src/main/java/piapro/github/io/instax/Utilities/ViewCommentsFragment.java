@@ -50,62 +50,63 @@ public class ViewCommentsFragment extends Fragment {
     }
 
     //firebase
-    private FirebaseAuth mAuth;
-    private FirebaseAuth.AuthStateListener mAuthListener;
-    private FirebaseDatabase mFirebaseDatabase;
-    private DatabaseReference myRef;
+    private FirebaseAuth vAuth;
+    private FirebaseAuth.AuthStateListener vAuthListener;
+    private FirebaseDatabase vFirebaseDatabase;
+    private DatabaseReference vRef;
 
-    //widgets
-    private ImageView mBackArrow, mCheckMark;
-    private EditText mComment;
-    private ListView mListView;
-
-    //vars
-    private Photo mPhoto;
-    private ArrayList<Comment> mComments;
-    private Context mContext;
+    //tools
+    private ImageView vArrowBack;
+    private ImageView vCheckMark;
+    private EditText vComment;
+    private ListView vListView;
+    
+    private Photo vPhoto;
+    private ArrayList<Comment> vComments;
+    
+    private Context vContext;
 
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
+        
         View view = inflater.inflate(R.layout.fragment_comment_view, container, false);
-        mBackArrow = (ImageView) view.findViewById(R.id.arrowBack);
-        mCheckMark = (ImageView) view.findViewById(R.id.post_comment);
-        mComment = (EditText) view.findViewById(R.id.comment);
-        mListView = (ListView) view.findViewById(R.id.listView);
-        mComments = new ArrayList<>();
-        mContext = getActivity();
+        
+        vArrowBack = (ImageView) view.findViewById(R.id.arrowBack);
+        vCheckMark = (ImageView) view.findViewById(R.id.post_comment);
+        vComment = (EditText) view.findViewById(R.id.comment);
+        vListView = (ListView) view.findViewById(R.id.listView);
+        vComments = new ArrayList<>();
+        
+        vContext = getActivity();
 
 
         try{
-            mPhoto = getPhotoFromBundle();
+            vPhoto = getPhotoFromBundle();
             setupFirebaseAuth();
 
         }catch (NullPointerException e){
             Log.e(TAG, "onCreateView: NullPointerException: " + e.getMessage() );
         }
 
-
-
-
         return view;
     }
 
-    private void setupWidgets(){
+    private void setupTools(){
 
-        CommentFormatAdapter adapter = new CommentFormatAdapter(mContext,
-                R.layout.layout_comment, mComments);
-        mListView.setAdapter(adapter);
+        CommentFormatAdapter adapter = new CommentFormatAdapter(vContext,
+                R.layout.layout_comment, vComments);
+        vListView.setAdapter(adapter);
 
-        mCheckMark.setOnClickListener(new View.OnClickListener() {
+        vCheckMark.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
-                if(!mComment.getText().toString().equals("")){
+                if(!vComment.getText().toString().equals("")){
                     Log.d(TAG, "onClick: attempting to submit new comment.");
-                    addNewComment(mComment.getText().toString());
+                    addComment(vComment.getText().toString());
 
-                    mComment.setText("");
+                    vComment.setText("");
                     closeKeyboard();
                 }else{
                     Toast.makeText(getActivity(), "you can't post a blank comment", Toast.LENGTH_SHORT).show();
@@ -113,11 +114,11 @@ public class ViewCommentsFragment extends Fragment {
             }
         });
 
-        mBackArrow.setOnClickListener(new View.OnClickListener() {
+        vArrowBack.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Log.d(TAG, "onClick: navigating back");
-                if(getCallingActivityFromBundle().equals(getString(R.string.home_activity))){
+                if(getActivityCallFromBundle().equals(getString(R.string.home_activity))){
                     getActivity().getSupportFragmentManager().popBackStack();
                     ((HomeActivity)getActivity()).showLayout();
                 }else{
@@ -137,27 +138,27 @@ public class ViewCommentsFragment extends Fragment {
     }
 
 
-    private void addNewComment(String newComment){
-        Log.d(TAG, "addNewComment: adding new comment: " + newComment);
+    private void addComment(String newComment){
+        Log.d(TAG, "addComment: adding new comment: " + newComment);
 
-        String commentID = myRef.push().getKey();
+        String commentID = vRef.push().getKey();
 
         Comment comment = new Comment();
         comment.setComment(newComment);
         comment.setDate_created(getTimestamp());
         comment.setUser_id(FirebaseAuth.getInstance().getCurrentUser().getUid());
 
-        //insert into photos node
-        myRef.child(getString(R.string.db_photos))
-                .child(mPhoto.getPhoto_id())
+        //insert into photos part
+        vRef.child(getString(R.string.db_photos))
+                .child(vPhoto.getPhoto_id())
                 .child(getString(R.string.fd_comments))
                 .child(commentID)
                 .setValue(comment);
 
-        //insert into user_photos node
-        myRef.child(getString(R.string.db_user_photos))
-                .child(mPhoto.getUser_id()) //should be mphoto.getUser_id()
-                .child(mPhoto.getPhoto_id())
+        //insert into user_photos part
+        vRef.child(getString(R.string.db_user_photos))
+                .child(vPhoto.getUser_id())
+                .child(vPhoto.getPhoto_id())
                 .child(getString(R.string.fd_comments))
                 .child(commentID)
                 .setValue(comment);
@@ -170,11 +171,8 @@ public class ViewCommentsFragment extends Fragment {
         return sdf.format(new Date());
     }
 
-    /**
-     * retrieve the photo from the incoming bundle from profileActivity interface
-     * @return
-     */
-    private String getCallingActivityFromBundle(){
+
+    private String getActivityCallFromBundle(){
         Log.d(TAG, "getPhotoFromBundle: arguments: " + getArguments());
 
         Bundle bundle = this.getArguments();
@@ -185,10 +183,7 @@ public class ViewCommentsFragment extends Fragment {
         }
     }
 
-    /**
-     * retrieve the photo from the incoming bundle from profileActivity interface
-     * @return
-     */
+
     private Photo getPhotoFromBundle(){
         Log.d(TAG, "getPhotoFromBundle: arguments: " + getArguments());
 
@@ -200,21 +195,15 @@ public class ViewCommentsFragment extends Fragment {
         }
     }
 
-           /*
-    ------------------------------------ Firebase ---------------------------------------------
-     */
-
-    /**
-     * Setup the firebase auth object
-     */
+    //firebase part
     private void setupFirebaseAuth(){
         Log.d(TAG, "setupFirebaseAuth: setting up firebase auth.");
 
-        mAuth = FirebaseAuth.getInstance();
-        mFirebaseDatabase = FirebaseDatabase.getInstance();
-        myRef = mFirebaseDatabase.getReference();
+        vAuth = FirebaseAuth.getInstance();
+        vFirebaseDatabase = FirebaseDatabase.getInstance();
+        vRef = vFirebaseDatabase.getReference();
 
-        mAuthListener = new FirebaseAuth.AuthStateListener() {
+        vAuthListener = new FirebaseAuth.AuthStateListener() {
             @Override
             public void onAuthStateChanged(@NonNull FirebaseAuth firebaseAuth) {
                 FirebaseUser user = firebaseAuth.getCurrentUser();
@@ -227,34 +216,33 @@ public class ViewCommentsFragment extends Fragment {
                     // User is signed out
                     Log.d(TAG, "onAuthStateChanged:signed_out");
                 }
-                // ...
             }
         };
 
-        if(mPhoto.getComments().size() == 0){
-            mComments.clear();
+        if(vPhoto.getComments().size() == 0){
+            vComments.clear();
             Comment firstComment = new Comment();
-            firstComment.setComment(mPhoto.getCaption());
-            firstComment.setUser_id(mPhoto.getUser_id());
-            firstComment.setDate_created(mPhoto.getDate_created());
-            mComments.add(firstComment);
-            mPhoto.setComments(mComments);
-            setupWidgets();
+            firstComment.setComment(vPhoto.getCaption());
+            firstComment.setUser_id(vPhoto.getUser_id());
+            firstComment.setDate_created(vPhoto.getDate_created());
+            vComments.add(firstComment);
+            vPhoto.setComments(vComments);
+            setupTools();
         }
 
 
-        myRef.child(mContext.getString(R.string.db_photos))
-                .child(mPhoto.getPhoto_id())
-                .child(mContext.getString(R.string.fd_comments))
+        vRef.child(vContext.getString(R.string.db_photos))
+                .child(vPhoto.getPhoto_id())
+                .child(vContext.getString(R.string.fd_comments))
                 .addChildEventListener(new ChildEventListener() {
                     @Override
                     public void onChildAdded(DataSnapshot dataSnapshot, String s) {
                         Log.d(TAG, "onChildAdded: child added.");
 
-                        Query query = myRef
-                                .child(mContext.getString(R.string.db_photos))
-                                .orderByChild(mContext.getString(R.string.fd_photo_id))
-                                .equalTo(mPhoto.getPhoto_id());
+                        Query query = vRef
+                                .child(vContext.getString(R.string.db_photos))
+                                .orderByChild(vContext.getString(R.string.fd_photo_id))
+                                .equalTo(vPhoto.getPhoto_id());
                         query.addListenerForSingleValueEvent(new ValueEventListener() {
                             @Override
                             public void onDataChange(DataSnapshot dataSnapshot) {
@@ -263,35 +251,35 @@ public class ViewCommentsFragment extends Fragment {
                                     Photo photo = new Photo();
                                     Map<String, Object> objectMap = (HashMap<String, Object>) singleSnapshot.getValue();
 
-                                    photo.setCaption(objectMap.get(mContext.getString(R.string.fd_caption)).toString());
-                                    photo.setTags(objectMap.get(mContext.getString(R.string.fd_tags)).toString());
-                                    photo.setPhoto_id(objectMap.get(mContext.getString(R.string.fd_photo_id)).toString());
-                                    photo.setUser_id(objectMap.get(mContext.getString(R.string.fd_user_id)).toString());
-                                    photo.setDate_created(objectMap.get(mContext.getString(R.string.fd_create_date)).toString());
-                                    photo.setImage_path(objectMap.get(mContext.getString(R.string.fd_image_path)).toString());
+                                    photo.setCaption(objectMap.get(vContext.getString(R.string.fd_caption)).toString());
+                                    photo.setTags(objectMap.get(vContext.getString(R.string.fd_tags)).toString());
+                                    photo.setPhoto_id(objectMap.get(vContext.getString(R.string.fd_photo_id)).toString());
+                                    photo.setUser_id(objectMap.get(vContext.getString(R.string.fd_user_id)).toString());
+                                    photo.setDate_created(objectMap.get(vContext.getString(R.string.fd_create_date)).toString());
+                                    photo.setImage_path(objectMap.get(vContext.getString(R.string.fd_image_path)).toString());
 
 
-                                    mComments.clear();
+                                    vComments.clear();
                                     Comment firstComment = new Comment();
-                                    firstComment.setComment(mPhoto.getCaption());
-                                    firstComment.setUser_id(mPhoto.getUser_id());
-                                    firstComment.setDate_created(mPhoto.getDate_created());
-                                    mComments.add(firstComment);
+                                    firstComment.setComment(vPhoto.getCaption());
+                                    firstComment.setUser_id(vPhoto.getUser_id());
+                                    firstComment.setDate_created(vPhoto.getDate_created());
+                                    vComments.add(firstComment);
 
                                     for (DataSnapshot dSnapshot : singleSnapshot
-                                            .child(mContext.getString(R.string.fd_comments)).getChildren()){
+                                            .child(vContext.getString(R.string.fd_comments)).getChildren()){
                                         Comment comment = new Comment();
                                         comment.setUser_id(dSnapshot.getValue(Comment.class).getUser_id());
                                         comment.setComment(dSnapshot.getValue(Comment.class).getComment());
                                         comment.setDate_created(dSnapshot.getValue(Comment.class).getDate_created());
-                                        mComments.add(comment);
+                                        vComments.add(comment);
                                     }
 
-                                    photo.setComments(mComments);
+                                    photo.setComments(vComments);
 
-                                    mPhoto = photo;
+                                    vPhoto = photo;
 
-                                    setupWidgets();
+                                    setupTools();
 
 
                                 }
@@ -334,14 +322,14 @@ public class ViewCommentsFragment extends Fragment {
     @Override
     public void onStart() {
         super.onStart();
-        mAuth.addAuthStateListener(mAuthListener);
+        vAuth.addAuthStateListener(vAuthListener);
     }
 
     @Override
     public void onStop() {
         super.onStop();
-        if (mAuthListener != null) {
-            mAuth.removeAuthStateListener(mAuthListener);
+        if (vAuthListener != null) {
+            vAuth.removeAuthStateListener(vAuthListener);
         }
     }
 

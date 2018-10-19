@@ -10,6 +10,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f81c887d-6444-470f-8786-52422dff22f3" name="Default" comment="">
+      <change beforePath="" afterPath="$PROJECT_DIR$/app/src/main/res/layout/layout_following_user_list.xml" />
       <change beforePath="$PROJECT_DIR$/.gradle/4.4/fileHashes/fileHashes.bin" afterPath="$PROJECT_DIR$/.gradle/4.4/fileHashes/fileHashes.bin" />
       <change beforePath="$PROJECT_DIR$/.gradle/4.4/fileHashes/fileHashes.lock" afterPath="$PROJECT_DIR$/.gradle/4.4/fileHashes/fileHashes.lock" />
       <change beforePath="$PROJECT_DIR$/.gradle/4.4/javaCompile/classAnalysis.bin" afterPath="$PROJECT_DIR$/.gradle/4.4/javaCompile/classAnalysis.bin" />
@@ -20,38 +21,22 @@
       <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/piapro/github/io/instax/FavoriteComponents/FavoriteActivity.java" afterPath="$PROJECT_DIR$/app/src/main/java/piapro/github/io/instax/FavoriteComponents/FavoriteActivity.java" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/piapro/github/io/instax/FirebaseModels/Comment.java" afterPath="$PROJECT_DIR$/app/src/main/java/piapro/github/io/instax/FirebaseModels/Comment.java" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/piapro/github/io/instax/FirebaseModels/Like.java" afterPath="$PROJECT_DIR$/app/src/main/java/piapro/github/io/instax/FirebaseModels/Like.java" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/piapro/github/io/instax/FirebaseModels/Photo.java" afterPath="$PROJECT_DIR$/app/src/main/java/piapro/github/io/instax/FirebaseModels/Photo.java" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/piapro/github/io/instax/HomeComponents/CameraFragment.java" afterPath="$PROJECT_DIR$/app/src/main/java/piapro/github/io/instax/HomeComponents/CameraFragment.java" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/piapro/github/io/instax/HomeComponents/DirectFragment.java" afterPath="$PROJECT_DIR$/app/src/main/java/piapro/github/io/instax/HomeComponents/DirectFragment.java" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/piapro/github/io/instax/HomeComponents/HomeActivity.java" afterPath="$PROJECT_DIR$/app/src/main/java/piapro/github/io/instax/HomeComponents/HomeActivity.java" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/piapro/github/io/instax/HomeComponents/HomeFragment.java" afterPath="$PROJECT_DIR$/app/src/main/java/piapro/github/io/instax/HomeComponents/HomeFragment.java" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/piapro/github/io/instax/LoginComponents/LoginActivity.java" afterPath="$PROJECT_DIR$/app/src/main/java/piapro/github/io/instax/LoginComponents/LoginActivity.java" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/piapro/github/io/instax/LoginComponents/RegisterActivity.java" afterPath="$PROJECT_DIR$/app/src/main/java/piapro/github/io/instax/LoginComponents/RegisterActivity.java" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/piapro/github/io/instax/ProfileComponents/AccountActivity.java" afterPath="$PROJECT_DIR$/app/src/main/java/piapro/github/io/instax/ProfileComponents/AccountActivity.java" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/piapro/github/io/instax/ProfileComponents/EditProfileFragment.java" afterPath="$PROJECT_DIR$/app/src/main/java/piapro/github/io/instax/ProfileComponents/EditProfileFragment.java" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/piapro/github/io/instax/ProfileComponents/ProfileActivity.java" afterPath="$PROJECT_DIR$/app/src/main/java/piapro/github/io/instax/ProfileComponents/ProfileActivity.java" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/piapro/github/io/instax/ProfileComponents/ProfileFragment.java" afterPath="$PROJECT_DIR$/app/src/main/java/piapro/github/io/instax/ProfileComponents/ProfileFragment.java" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/piapro/github/io/instax/ProfileComponents/SignOutFragment.java" afterPath="$PROJECT_DIR$/app/src/main/java/piapro/github/io/instax/ProfileComponents/SignOutFragment.java" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/piapro/github/io/instax/SearchComponents/SearchActivity.java" afterPath="$PROJECT_DIR$/app/src/main/java/piapro/github/io/instax/SearchComponents/SearchActivity.java" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/piapro/github/io/instax/ShareComponents/GalleryFragment.java" afterPath="$PROJECT_DIR$/app/src/main/java/piapro/github/io/instax/ShareComponents/GalleryFragment.java" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/piapro/github/io/instax/ShareComponents/NextActivity.java" afterPath="$PROJECT_DIR$/app/src/main/java/piapro/github/io/instax/ShareComponents/NextActivity.java" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/piapro/github/io/instax/ShareComponents/PhotoFragment.java" afterPath="$PROJECT_DIR$/app/src/main/java/piapro/github/io/instax/ShareComponents/PhotoFragment.java" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/piapro/github/io/instax/ShareComponents/ShareActivity.java" afterPath="$PROJECT_DIR$/app/src/main/java/piapro/github/io/instax/ShareComponents/ShareActivity.java" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/piapro/github/io/instax/Utilities/FilePaths.java" afterPath="$PROJECT_DIR$/app/src/main/java/piapro/github/io/instax/Utilities/FilePaths.java" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/piapro/github/io/instax/Utilities/CommentFormatAdapter.java" afterPath="$PROJECT_DIR$/app/src/main/java/piapro/github/io/instax/Utilities/CommentFormatAdapter.java" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/piapro/github/io/instax/Utilities/FileSearch.java" afterPath="$PROJECT_DIR$/app/src/main/java/piapro/github/io/instax/Utilities/FileSearch.java" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/piapro/github/io/instax/Utilities/GridImageAdapter.java" afterPath="$PROJECT_DIR$/app/src/main/java/piapro/github/io/instax/Utilities/GridImageAdapter.java" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/piapro/github/io/instax/Utilities/Heart.java" afterPath="$PROJECT_DIR$/app/src/main/java/piapro/github/io/instax/Utilities/Heart.java" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/piapro/github/io/instax/Utilities/ImageManager.java" afterPath="$PROJECT_DIR$/app/src/main/java/piapro/github/io/instax/Utilities/ImageManager.java" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/piapro/github/io/instax/Utilities/MainfeedListAdapter.java" afterPath="$PROJECT_DIR$/app/src/main/java/piapro/github/io/instax/Utilities/MainfeedListAdapter.java" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/piapro/github/io/instax/Utilities/MethodFirebase.java" afterPath="$PROJECT_DIR$/app/src/main/java/piapro/github/io/instax/Utilities/MethodFirebase.java" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/piapro/github/io/instax/Utilities/Permissions.java" afterPath="$PROJECT_DIR$/app/src/main/java/piapro/github/io/instax/Utilities/Permissions.java" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/piapro/github/io/instax/Utilities/UserListAdapter.java" afterPath="$PROJECT_DIR$/app/src/main/java/piapro/github/io/instax/Utilities/UserListAdapter.java" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/piapro/github/io/instax/Utilities/ViewCommentsFragment.java" afterPath="$PROJECT_DIR$/app/src/main/java/piapro/github/io/instax/Utilities/ViewCommentsFragment.java" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/piapro/github/io/instax/Utilities/ViewPostFragment.java" afterPath="$PROJECT_DIR$/app/src/main/java/piapro/github/io/instax/Utilities/ViewPostFragment.java" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/piapro/github/io/instax/Utilities/ViewProfileFragment.java" afterPath="$PROJECT_DIR$/app/src/main/java/piapro/github/io/instax/Utilities/ViewProfileFragment.java" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/piapro/github/io/instax/dialogs/ConfirmPasswordDialog.java" afterPath="$PROJECT_DIR$/app/src/main/java/piapro/github/io/instax/PasswordWindow/ConfirmPasswordWindow.java" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_like.xml" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_like.xml" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/fragment_post_view.xml" afterPath="$PROJECT_DIR$/app/src/main/res/layout/fragment_view_post.xml" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/fragment_profile_view.xml" afterPath="$PROJECT_DIR$/app/src/main/res/layout/fragment_profile_view.xml" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/layout_center_view_profile.xml" afterPath="$PROJECT_DIR$/app/src/main/res/layout/layout_center_view_profile.xml" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/snippet_top_view_profile.xml" afterPath="$PROJECT_DIR$/app/src/main/res/layout/top_view_profile.xml" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/snippet_top_view_profilebar.xml" afterPath="$PROJECT_DIR$/app/src/main/res/layout/top_view_profilebar.xml" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -67,46 +52,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="ViewProfileFragment.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/app/src/main/java/piapro/github/io/instax/Utilities/ViewProfileFragment.java">
+      <file leaf-file-name="FileSearch.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/piapro/github/io/instax/Utilities/FileSearch.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-420">
-              <caret line="2" column="0" lean-forward="false" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#8610#8644#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ViewCommentsFragment.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/java/piapro/github/io/instax/Utilities/ViewCommentsFragment.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="237">
-              <caret line="40" column="52" lean-forward="false" selection-start-line="40" selection-start-column="52" selection-end-line="40" selection-end-column="52" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ViewPostFragment.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/java/piapro/github/io/instax/Utilities/ViewPostFragment.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-216">
-              <caret line="20" column="45" lean-forward="false" selection-start-line="20" selection-start-column="45" selection-end-line="20" selection-end-column="45" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="MainfeedListAdapter.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/java/piapro/github/io/instax/Utilities/MainfeedListAdapter.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-6480">
-              <caret line="26" column="0" lean-forward="false" selection-start-line="26" selection-start-column="0" selection-end-line="26" selection-end-column="0" />
+            <state relative-caret-position="145">
+              <caret line="22" column="0" lean-forward="false" selection-start-line="22" selection-start-column="0" selection-end-line="22" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -115,8 +65,20 @@
       <file leaf-file-name="MethodFirebase.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/piapro/github/io/instax/Utilities/MethodFirebase.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-224">
-              <caret line="26" column="34" lean-forward="false" selection-start-line="26" selection-start-column="34" selection-end-line="26" selection-end-column="34" />
+            <state relative-caret-position="2436">
+              <caret line="227" column="0" lean-forward="false" selection-start-line="227" selection-start-column="0" selection-end-line="227" selection-end-column="0" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="SettingPageAdapter.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/piapro/github/io/instax/Utilities/SettingPageAdapter.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-373">
+              <caret line="10" column="13" lean-forward="false" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
               <folding />
             </state>
           </provider>
@@ -125,8 +87,8 @@
       <file leaf-file-name="Permissions.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/piapro/github/io/instax/Utilities/Permissions.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="45">
-              <caret line="3" column="0" lean-forward="false" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
+            <state relative-caret-position="40">
+              <caret line="4" column="13" lean-forward="false" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
               <folding />
             </state>
           </provider>
@@ -135,18 +97,18 @@
       <file leaf-file-name="StringManipulation.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/piapro/github/io/instax/Utilities/StringManipulation.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="30">
+            <state relative-caret-position="-125">
               <caret line="2" column="13" lean-forward="false" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="SettingPageAdapter.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/java/piapro/github/io/instax/Utilities/SettingPageAdapter.java">
+      <file leaf-file-name="FormatImageView.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/piapro/github/io/instax/Utilities/FormatImageView.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="60">
-              <caret line="10" column="13" lean-forward="false" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
+              <caret line="6" column="13" lean-forward="false" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
               <folding />
             </state>
           </provider>
@@ -162,17 +124,46 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="UserListAdapter.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="GridImageAdapter.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/piapro/github/io/instax/Utilities/GridImageAdapter.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-875">
+              <caret line="20" column="13" lean-forward="false" selection-start-line="20" selection-start-column="13" selection-end-line="20" selection-end-column="13" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="UserListAdapter.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/piapro/github/io/instax/Utilities/UserListAdapter.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-106">
-              <caret line="5" column="43" lean-forward="false" selection-start-line="5" selection-start-column="43" selection-end-line="5" selection-end-column="43" />
+            <state relative-caret-position="340">
+              <caret line="104" column="0" lean-forward="true" selection-start-line="104" selection-start-column="0" selection-end-line="104" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="CommentFormatAdapter.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/piapro/github/io/instax/Utilities/CommentFormatAdapter.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1590">
+              <caret line="144" column="0" lean-forward="false" selection-start-line="144" selection-start-column="0" selection-end-line="144" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
     </leaf>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="layoutResourceFile" />
+      </list>
+    </option>
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
@@ -185,14 +176,22 @@
       <find>layout</find>
       <find>myRef</find>
       <find>setProfileWidgets</find>
-      <find>like</find>
-      <find>mLikes</find>
       <find>ConfirmPassword</find>
       <find>ACTIVITY_NUM</find>
       <find>NUM_GRID_COLUMNS</find>
       <find>sSignout</find>
       <find>GALLERY_FRAGMENT_NUM</find>
       <find>setupBottomNavigationView</find>
+      <find>like</find>
+      <find>mLikes</find>
+      <find>mUsers</find>
+      <find>sListView</find>
+      <find>sAdapter</find>
+      <find>sUserList</find>
+      <find>getUsername</find>
+      <find>mFirebaseMethods</find>
+      <find>mBackLabel</find>
+      <find>photoUsername</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -2240,7 +2239,6 @@
         <option value="$PROJECT_DIR$/app/src/main/res/layout/profile_center.xml" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/layout_center_view_profile.xml" />
         <option value="$PROJECT_DIR$/app/src/main/java/piapro/github/io/instax/PasswordWindow/ConfirmPasswordDialog.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/piapro/github/io/instax/FavoriteComponents/FavoriteActivity.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/piapro/github/io/instax/FirebaseModels/Like.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/piapro/github/io/instax/FirebaseModels/Comment.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/piapro/github/io/instax/FirebaseModels/Photo.java" />
@@ -2256,28 +2254,32 @@
         <option value="$PROJECT_DIR$/app/src/main/java/piapro/github/io/instax/ProfileComponents/ProfileActivity.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/piapro/github/io/instax/ProfileComponents/ProfileFragment.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/piapro/github/io/instax/ProfileComponents/SignOutFragment.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/piapro/github/io/instax/SearchComponents/SearchActivity.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/piapro/github/io/instax/ShareComponents/GalleryFragment.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/piapro/github/io/instax/ShareComponents/NextActivity.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/piapro/github/io/instax/ShareComponents/PhotoFragment.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/piapro/github/io/instax/ShareComponents/ShareActivity.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/piapro/github/io/instax/Utilities/FilePaths.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/piapro/github/io/instax/Utilities/FileSearch.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/piapro/github/io/instax/Utilities/GridImageAdapter.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/piapro/github/io/instax/Utilities/Heart.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/piapro/github/io/instax/Utilities/ImageManager.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/piapro/github/io/instax/Utilities/MainfeedListAdapter.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/piapro/github/io/instax/Utilities/MethodFirebase.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/piapro/github/io/instax/Utilities/Permissions.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/piapro/github/io/instax/Utilities/UserListAdapter.java" />
+        <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_like.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/java/piapro/github/io/instax/SearchComponents/SearchActivity.java" />
+        <option value="$PROJECT_DIR$/app/src/main/res/layout/layout_following_user_list.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/java/piapro/github/io/instax/FavoriteComponents/FavoriteActivity.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/piapro/github/io/instax/Utilities/Heart.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/piapro/github/io/instax/Utilities/ViewCommentsFragment.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/piapro/github/io/instax/Utilities/ViewPostFragment.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/piapro/github/io/instax/Utilities/ViewProfileFragment.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/piapro/github/io/instax/Utilities/MainfeedListAdapter.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/piapro/github/io/instax/Utilities/FileSearch.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/piapro/github/io/instax/Utilities/CommentFormatAdapter.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/piapro/github/io/instax/Utilities/MethodFirebase.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/piapro/github/io/instax/Utilities/UserListAdapter.java" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="171" />
+    <option name="x" value="148" />
     <option name="y" value="23" />
     <option name="width" value="1125" />
     <option name="height" value="811" />
@@ -2326,7 +2328,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="PackagesPane" />
       <pane id="AndroidView">
         <subPane>
           <expand>
@@ -2358,13 +2359,6 @@
               <item name="java" type="edd41e36:AndroidSourceTypeNode" />
               <item name="instax" type="cbb59c9e:AndroidPsiDirectoryNode" />
               <item name="FirebaseModels" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="ass2_mobile" type="1abcf292:AndroidViewProjectNode" />
-              <item name="app" type="feadf853:AndroidModuleNode" />
-              <item name="java" type="edd41e36:AndroidSourceTypeNode" />
-              <item name="instax" type="cbb59c9e:AndroidPsiDirectoryNode" />
-              <item name="HomeComponents" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="ass2_mobile" type="1abcf292:AndroidViewProjectNode" />
@@ -2429,9 +2423,10 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scratches" />
-      <pane id="Scope" />
       <pane id="ProjectPane" />
+      <pane id="PackagesPane" />
+      <pane id="Scope" />
+      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -2619,7 +2614,7 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="171" y="23" width="1125" height="811" extended-state="0" />
+    <frame x="148" y="23" width="1125" height="811" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Android Profiler" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -2630,16 +2625,16 @@
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32963988" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32960895" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32960895" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32960895" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32960895" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Logcat" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32960895" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Captures" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24930748" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Build" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32960895" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32960895" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32960895" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Gradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Device File Explorer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
@@ -2688,156 +2683,10 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_like.xml">
-      <provider editor-type-id="android-designer2">
-        <state />
-      </provider>
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/comment_toolbar.xml">
-      <provider editor-type-id="android-designer2">
-        <state />
-      </provider>
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="285">
-          <caret line="19" column="46" lean-forward="false" selection-start-line="19" selection-start-column="37" selection-end-line="19" selection-end-column="46" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/fragment_comment_view.xml">
-      <provider editor-type-id="android-designer2">
-        <state />
-      </provider>
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="345">
-          <caret line="23" column="8" lean-forward="false" selection-start-line="23" selection-start-column="8" selection-end-line="23" selection-end-column="8" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/values/strings.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="10" column="39" lean-forward="false" selection-start-line="10" selection-start-column="18" selection-end-line="10" selection-end-column="39" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/piapro/github/io/instax/FavoriteComponents/FollowedFragment.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="11" column="13" lean-forward="false" selection-start-line="11" selection-start-column="13" selection-end-line="11" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/fragment_yourself.xml">
-      <provider editor-type-id="android-designer2">
-        <state />
-      </provider>
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/fragment_follower.xml">
-      <provider editor-type-id="android-designer2">
-        <state />
-      </provider>
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/piapro/github/io/instax/PasswordWindow/ConfirmPasswordDialog.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="345">
-          <caret line="23" column="24" lean-forward="false" selection-start-line="23" selection-start-column="24" selection-end-line="23" selection-end-column="24" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/piapro/github/io/instax/FavoriteComponents/FavoriteActivity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="241">
-          <caret line="34" column="7" lean-forward="true" selection-start-line="34" selection-start-column="7" selection-end-line="34" selection-end-column="7" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/piapro/github/io/instax/FirebaseModels/Comment.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="7" column="27" lean-forward="false" selection-start-line="7" selection-start-column="27" selection-end-line="7" selection-end-column="27" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/piapro/github/io/instax/FirebaseModels/Like.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="23" column="30" lean-forward="true" selection-start-line="23" selection-start-column="30" selection-end-line="23" selection-end-column="30" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/piapro/github/io/instax/FirebaseModels/Photo.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-732">
-          <caret line="39" column="34" lean-forward="false" selection-start-line="39" selection-start-column="34" selection-end-line="39" selection-end-column="34" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/piapro/github/io/instax/FirebaseModels/SettingUser.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="30">
-          <caret line="2" column="13" lean-forward="false" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/piapro/github/io/instax/FirebaseModels/User.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="5" column="13" lean-forward="false" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/piapro/github/io/instax/FirebaseModels/UserAccountSettings.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1415">
-          <caret line="5" column="13" lean-forward="false" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/piapro/github/io/instax/HomeComponents/CameraFragment.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="270">
           <caret line="18" column="0" lean-forward="false" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -2845,19 +2694,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="285">
           <caret line="19" column="8" lean-forward="false" selection-start-line="19" selection-start-column="8" selection-end-line="19" selection-end-column="8" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/piapro/github/io/instax/HomeComponents/HomeActivity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-260">
-          <caret line="158" column="36" lean-forward="true" selection-start-line="158" selection-start-column="36" selection-end-line="158" selection-end-column="36" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -2949,22 +2785,12 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/piapro/github/io/instax/SearchComponents/SearchActivity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="160">
-          <caret line="151" column="18" lean-forward="false" selection-start-line="151" selection-start-column="18" selection-end-line="151" selection-end-column="18" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/piapro/github/io/instax/ShareComponents/GalleryFragment.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-80">
           <caret line="183" column="33" lean-forward="false" selection-start-line="183" selection-start-column="33" selection-end-line="183" selection-end-column="33" />
           <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="imports" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -2974,7 +2800,7 @@
         <state relative-caret-position="-470">
           <caret line="107" column="19" lean-forward="false" selection-start-line="107" selection-start-column="19" selection-end-line="107" selection-end-column="19" />
           <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="imports" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -2984,7 +2810,7 @@
         <state relative-caret-position="-154">
           <caret line="70" column="49" lean-forward="false" selection-start-line="70" selection-start-column="49" selection-end-line="70" selection-end-column="49" />
           <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="imports" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -3002,63 +2828,9 @@
         <state relative-caret-position="269">
           <caret line="18" column="13" lean-forward="false" selection-start-line="18" selection-start-column="13" selection-end-line="18" selection-end-column="13" />
           <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#1531#3454#0" expanded="true" />
-            <element signature="e#3453#3454#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/piapro/github/io/instax/Utilities/CommentFormatAdapter.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="43" column="13" lean-forward="false" selection-start-line="43" selection-start-column="13" selection-end-line="43" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/piapro/github/io/instax/Utilities/FilePaths.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="45">
-          <caret line="3" column="0" lean-forward="false" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/piapro/github/io/instax/Utilities/FileSearch.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="15">
-          <caret line="1" column="0" lean-forward="false" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/piapro/github/io/instax/Utilities/FormatImageView.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="6" column="13" lean-forward="false" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/piapro/github/io/instax/Utilities/GridImageAdapter.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="9" column="35" lean-forward="false" selection-start-line="9" selection-start-column="35" selection-end-line="9" selection-end-column="35" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/piapro/github/io/instax/Utilities/Heart.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="340">
-          <caret line="73" column="0" lean-forward="true" selection-start-line="73" selection-start-column="0" selection-end-line="73" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="imports" expanded="false" />
+            <element signature="e#1531#3454#0" expanded="false" />
+            <element signature="e#3453#3454#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -3068,7 +2840,7 @@
         <state relative-caret-position="137">
           <caret line="34" column="0" lean-forward="false" selection-start-line="34" selection-start-column="0" selection-end-line="34" selection-end-column="0" />
           <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="imports" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -3081,31 +2853,145 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/piapro/github/io/instax/Utilities/MainfeedListAdapter.java">
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_share.xml">
+      <provider editor-type-id="android-designer2">
+        <state />
+      </provider>
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-6480">
-          <caret line="26" column="0" lean-forward="false" selection-start-line="26" selection-start-column="0" selection-end-line="26" selection-end-column="0" />
+        <state relative-caret-position="146">
+          <caret line="20" column="8" lean-forward="false" selection-start-line="20" selection-start-column="8" selection-end-line="20" selection-end-column="8" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/piapro/github/io/instax/Utilities/MethodFirebase.java">
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/piapro/github/io/instax/HomeComponents/HomeActivity.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-224">
-          <caret line="26" column="34" lean-forward="false" selection-start-line="26" selection-start-column="34" selection-end-line="26" selection-end-column="34" />
+        <state relative-caret-position="1562">
+          <caret line="158" column="36" lean-forward="true" selection-start-line="158" selection-start-column="36" selection-end-line="158" selection-end-column="36" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/piapro/github/io/instax/Utilities/Permissions.java">
+    <entry file="file://$PROJECT_DIR$/app/src/main/AndroidManifest.xml">
+      <provider editor-type-id="android-manifest">
+        <state />
+      </provider>
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="45">
-          <caret line="3" column="0" lean-forward="false" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
+        <state relative-caret-position="135">
+          <caret line="9" column="0" lean-forward="true" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
+          <folding>
+            <element signature="e#556#574#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_like.xml">
+      <provider editor-type-id="android-designer2">
+        <state />
+      </provider>
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="272">
+          <caret line="45" column="37" lean-forward="false" selection-start-line="45" selection-start-column="37" selection-end-line="45" selection-end-column="37" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/piapro/github/io/instax/Utilities/StringManipulation.java">
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_search.xml">
+      <provider editor-type-id="android-designer2">
+        <state />
+      </provider>
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="131">
+          <caret line="19" column="8" lean-forward="false" selection-start-line="19" selection-start-column="8" selection-end-line="19" selection-end-column="8" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/fragment_view_post.xml">
+      <provider editor-type-id="android-designer2">
+        <state />
+      </provider>
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="251">
+          <caret line="23" column="37" lean-forward="false" selection-start-line="23" selection-start-column="37" selection-end-line="23" selection-end-column="37" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/layout_user_list.xml">
+      <provider editor-type-id="android-designer2">
+        <state />
+      </provider>
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="371">
+          <caret line="49" column="17" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="49" selection-end-column="17" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/layout_following_user_list.xml">
+      <provider editor-type-id="android-designer2">
+        <state />
+      </provider>
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="287">
+          <caret line="36" column="0" lean-forward="false" selection-start-line="36" selection-start-column="0" selection-end-line="36" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/layout_post_view.xml">
+      <provider editor-type-id="android-designer2">
+        <state />
+      </provider>
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="112">
+          <caret line="116" column="16" lean-forward="false" selection-start-line="116" selection-start-column="16" selection-end-line="122" selection-end-column="46" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/piapro/github/io/instax/SearchComponents/SearchActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="506">
+          <caret line="123" column="96" lean-forward="false" selection-start-line="123" selection-start-column="87" selection-end-line="123" selection-end-column="96" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/piapro/github/io/instax/FirebaseModels/Like.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="23" column="30" lean-forward="false" selection-start-line="23" selection-start-column="30" selection-end-line="23" selection-end-column="30" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/piapro/github/io/instax/FirebaseModels/User.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-575">
+          <caret line="16" column="33" lean-forward="false" selection-start-line="16" selection-start-column="33" selection-end-line="16" selection-end-column="33" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/piapro/github/io/instax/FirebaseModels/UserAccountSettings.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="5" column="13" lean-forward="false" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/piapro/github/io/instax/FirebaseModels/Photo.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="540">
+          <caret line="39" column="34" lean-forward="false" selection-start-line="39" selection-start-column="34" selection-end-line="39" selection-end-column="34" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/piapro/github/io/instax/FirebaseModels/SettingUser.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="30">
           <caret line="2" column="13" lean-forward="false" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
@@ -3113,10 +2999,138 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/piapro/github/io/instax/Utilities/SettingPageAdapter.java">
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/piapro/github/io/instax/FirebaseModels/Comment.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="8" column="29" lean-forward="false" selection-start-line="8" selection-start-column="29" selection-end-line="8" selection-end-column="29" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/piapro/github/io/instax/FavoriteComponents/FavoriteActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="145">
+          <caret line="22" column="6" lean-forward="false" selection-start-line="22" selection-start-column="6" selection-end-line="22" selection-end-column="6" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/piapro/github/io/instax/Utilities/Heart.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-249">
+          <caret line="18" column="41" lean-forward="false" selection-start-line="18" selection-start-column="41" selection-end-line="18" selection-end-column="41" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/piapro/github/io/instax/Utilities/ViewCommentsFragment.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1194">
+          <caret line="217" column="17" lean-forward="false" selection-start-line="217" selection-start-column="17" selection-end-line="217" selection-end-column="17" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/piapro/github/io/instax/Utilities/ViewPostFragment.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-361">
+          <caret line="539" column="19" lean-forward="false" selection-start-line="539" selection-start-column="19" selection-end-line="539" selection-end-column="19" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/piapro/github/io/instax/Utilities/ViewProfileFragment.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-245">
+          <caret line="463" column="19" lean-forward="false" selection-start-line="463" selection-start-column="19" selection-end-line="463" selection-end-column="19" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/piapro/github/io/instax/Utilities/MainfeedListAdapter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="412">
+          <caret line="541" column="0" lean-forward="true" selection-start-line="541" selection-start-column="0" selection-end-line="541" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/piapro/github/io/instax/Utilities/FilePaths.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="60">
+          <caret line="4" column="13" lean-forward="false" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/piapro/github/io/instax/Utilities/FileSearch.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="145">
+          <caret line="22" column="0" lean-forward="false" selection-start-line="22" selection-start-column="0" selection-end-line="22" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/piapro/github/io/instax/Utilities/FormatImageView.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="6" column="13" lean-forward="false" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/piapro/github/io/instax/Utilities/CommentFormatAdapter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1590">
+          <caret line="144" column="0" lean-forward="false" selection-start-line="144" selection-start-column="0" selection-end-line="144" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/piapro/github/io/instax/Utilities/GridImageAdapter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-875">
+          <caret line="20" column="13" lean-forward="false" selection-start-line="20" selection-start-column="13" selection-end-line="20" selection-end-column="13" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/piapro/github/io/instax/Utilities/Permissions.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="40">
+          <caret line="4" column="13" lean-forward="false" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/piapro/github/io/instax/Utilities/MethodFirebase.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2436">
+          <caret line="227" column="0" lean-forward="false" selection-start-line="227" selection-start-column="0" selection-end-line="227" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/piapro/github/io/instax/Utilities/SettingPageAdapter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-373">
           <caret line="10" column="13" lean-forward="false" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/piapro/github/io/instax/Utilities/StringManipulation.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-125">
+          <caret line="2" column="13" lean-forward="false" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
           <folding />
         </state>
       </provider>
@@ -3131,38 +3145,9 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/piapro/github/io/instax/Utilities/UserListAdapter.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-106">
-          <caret line="5" column="43" lean-forward="false" selection-start-line="5" selection-start-column="43" selection-end-line="5" selection-end-column="43" />
+        <state relative-caret-position="340">
+          <caret line="104" column="0" lean-forward="true" selection-start-line="104" selection-start-column="0" selection-end-line="104" selection-end-column="0" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/piapro/github/io/instax/Utilities/ViewCommentsFragment.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="237">
-          <caret line="40" column="52" lean-forward="false" selection-start-line="40" selection-start-column="52" selection-end-line="40" selection-end-column="52" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/piapro/github/io/instax/Utilities/ViewPostFragment.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-216">
-          <caret line="20" column="45" lean-forward="false" selection-start-line="20" selection-start-column="45" selection-end-line="20" selection-end-column="45" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/piapro/github/io/instax/Utilities/ViewProfileFragment.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-420">
-          <caret line="2" column="0" lean-forward="false" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#8610#8644#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>

@@ -40,16 +40,14 @@ public class SearchActivity extends AppCompatActivity{
 
     private Context sContext = SearchActivity.this;
 
-    //widgets
+    //tools
     private EditText sSearchParam;
     private ListView sListView;
 
-    //vars
     private List<User> sUserList;
     private UserListAdapter sAdapter;
 
     @Override
-    //Alt+Insert open Generate Method
     protected void onCreate(@Nullable Bundle savedInstanceState) {
 
         super.onCreate(savedInstanceState);

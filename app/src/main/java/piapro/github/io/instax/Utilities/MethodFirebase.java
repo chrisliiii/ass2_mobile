@@ -226,13 +226,6 @@ public class MethodFirebase {
         return count;
     }
 
-    /**
-     * Update 'user_account_settings' node for the current user
-     * @param displayName
-     * @param website
-     * @param description
-     * @param phoneNumber
-     */
     public void updateUserAccountSettings(String displayName, String website, String description, long phoneNumber){
 
         Log.d(TAG, "updateUserAccountSettings: updating user account settings.");
@@ -267,10 +260,6 @@ public class MethodFirebase {
         }
     }
 
-    /**
-     * update username in the 'users' node and 'user_account_settings' node
-     * @param username
-     */
     public void updateUsername(String username){
         Log.d(TAG, "updateUsername: upadting username to: " + username);
 
@@ -285,10 +274,6 @@ public class MethodFirebase {
                 .setValue(username);
     }
 
-    /**
-     * update the email in the 'user's' node
-     * @param email
-     */
     public void updateEmail(String email){
         Log.d(TAG, "updateEmail: upadting email to: " + email);
 
@@ -299,31 +284,6 @@ public class MethodFirebase {
 
     }
 
-//    public boolean checkIfUsernameExists(String username, DataSnapshot datasnapshot){
-//        Log.d(TAG, "checkIfUsernameExists: checking if " + username + " already exists.");
-//
-//        User user = new User();
-//
-//        for (DataSnapshot ds: datasnapshot.child(userID).getChildren()){
-//            Log.d(TAG, "checkIfUsernameExists: datasnapshot: " + ds);
-//
-//            user.setUsername(ds.getValue(User.class).getUsername());
-//            Log.d(TAG, "checkIfUsernameExists: username: " + user.getUsername());
-//
-//            if(StringManipulation.expandUsername(user.getUsername()).equals(username)){
-//                Log.d(TAG, "checkIfUsernameExists: FOUND A MATCH: " + user.getUsername());
-//                return true;
-//            }
-//        }
-//        return false;
-//    }
-
-    /**
-     * Register a new email and password to Firebase Authentication
-     * @param email
-     * @param password
-     * @param username
-     */
     public void registerNewEmail(final String email, String password, final String username){
         mAuth.createUserWithEmailAndPassword(email, password)
                 .addOnCompleteListener(new OnCompleteListener<AuthResult>() {
@@ -331,9 +291,7 @@ public class MethodFirebase {
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         Log.d(TAG, "createUserWithEmail:onComplete:" + task.isSuccessful());
 
-                        // If sign in fails, display a message to the user. If sign in succeeds
-                        // the auth state listener will be notified and logic to handle the
-                        // signed in user can be handled in the listener.
+                        //if signin success
                         if (!task.isSuccessful()) {
                             Toast.makeText(mContext, R.string.auth_failed,
                                     Toast.LENGTH_SHORT).show();
@@ -369,15 +327,6 @@ public class MethodFirebase {
         }
     }
 
-    /**
-     * Add information to the users nodes
-     * Add information to the user_account_settings node
-     * @param email
-     * @param username
-     * @param description
-     * @param website
-     * @param profile_photo
-     */
     public void addNewUser(String email, String username, String description, String website, String profile_photo){
 
         User user = new User( userID,  1,  email,  StringManipulation.condenseUsername(username) );
@@ -406,12 +355,6 @@ public class MethodFirebase {
     }
 
 
-    /**
-     * Retrieves the account settings for teh user currently logged in
-     * Database: user_acount_Settings node
-     * @param dataSnapshot
-     * @return
-     */
     public SettingUser getUserSettings(DataSnapshot dataSnapshot){
         Log.d(TAG, "getUserAccountSettings: retrieving user account settings from firebase.");
 

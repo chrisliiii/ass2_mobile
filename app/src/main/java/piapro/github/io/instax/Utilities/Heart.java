@@ -16,53 +16,53 @@ public class Heart {
     private static final DecelerateInterpolator DECCELERATE_INTERPOLATOR = new DecelerateInterpolator();
     private static final AccelerateInterpolator ACCELERATE_INTERPOLATOR = new AccelerateInterpolator();
 
-    public ImageView heartWhite, heartRed;
+    public ImageView whiteHeart, redHeart;
 
-    public Heart(ImageView heartWhite, ImageView heartRed) {
-        this.heartWhite = heartWhite;
-        this.heartRed = heartRed;
+    public Heart(ImageView whiteHeart, ImageView redHeart) {
+        this.whiteHeart = whiteHeart;
+        this.redHeart = redHeart;
     }
 
     public void toggleLike(){
-        Log.d(TAG, "toggleLike: toggling heart.");
+        Log.d(TAG, "toggleLike: toggle heart.");
 
         AnimatorSet animationSet =  new AnimatorSet();
 
 
-        if(heartRed.getVisibility() == View.VISIBLE){
-            Log.d(TAG, "toggleLike: toggling red heart off.");
-            heartRed.setScaleX(0.1f);
-            heartRed.setScaleY(0.1f);
+        if(redHeart.getVisibility() == View.VISIBLE){
+            Log.d(TAG, "toggleLike: toggle red heart off.");
+            redHeart.setScaleX(0.1f);
+            redHeart.setScaleY(0.1f);
 
-            ObjectAnimator scaleDownY = ObjectAnimator.ofFloat(heartRed, "scaleY", 1f, 0f);
+            ObjectAnimator scaleDownY = ObjectAnimator.ofFloat(redHeart, "scaleY", 1f, 0f);
             scaleDownY.setDuration(300);
             scaleDownY.setInterpolator(ACCELERATE_INTERPOLATOR);
 
-            ObjectAnimator scaleDownX = ObjectAnimator.ofFloat(heartRed, "scaleX", 1f, 0f);
+            ObjectAnimator scaleDownX = ObjectAnimator.ofFloat(redHeart, "scaleX", 1f, 0f);
             scaleDownX.setDuration(300);
             scaleDownX.setInterpolator(ACCELERATE_INTERPOLATOR);
 
-            heartRed.setVisibility(View.GONE);
-            heartWhite.setVisibility(View.VISIBLE);
+            redHeart.setVisibility(View.GONE);
+            whiteHeart.setVisibility(View.VISIBLE);
 
             animationSet.playTogether(scaleDownY, scaleDownX);
         }
 
-        else if(heartRed.getVisibility() == View.GONE){
+        else if(redHeart.getVisibility() == View.GONE){
             Log.d(TAG, "toggleLike: toggling red heart on.");
-            heartRed.setScaleX(0.1f);
-            heartRed.setScaleY(0.1f);
+            redHeart.setScaleX(0.1f);
+            redHeart.setScaleY(0.1f);
 
-            ObjectAnimator scaleDownY = ObjectAnimator.ofFloat(heartRed, "scaleY", 0.1f, 1f);
+            ObjectAnimator scaleDownY = ObjectAnimator.ofFloat(redHeart, "scaleY", 0.1f, 1f);
             scaleDownY.setDuration(300);
             scaleDownY.setInterpolator(DECCELERATE_INTERPOLATOR);
 
-            ObjectAnimator scaleDownX = ObjectAnimator.ofFloat(heartRed, "scaleX", 0.1f, 1f);
+            ObjectAnimator scaleDownX = ObjectAnimator.ofFloat(redHeart, "scaleX", 0.1f, 1f);
             scaleDownX.setDuration(300);
             scaleDownX.setInterpolator(DECCELERATE_INTERPOLATOR);
 
-            heartRed.setVisibility(View.VISIBLE);
-            heartWhite.setVisibility(View.GONE);
+            redHeart.setVisibility(View.VISIBLE);
+            whiteHeart.setVisibility(View.GONE);
 
             animationSet.playTogether(scaleDownY, scaleDownX);
         }

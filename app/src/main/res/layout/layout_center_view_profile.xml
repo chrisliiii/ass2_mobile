@@ -49,7 +49,7 @@
                     android:layout_marginStart="30dp"
                     android:layout_weight="3">
 
-                    <include layout="@layout/snippet_top_view_profile"/>
+                    <include layout="@layout/top_view_profile"/>
 
                 </RelativeLayout>
 

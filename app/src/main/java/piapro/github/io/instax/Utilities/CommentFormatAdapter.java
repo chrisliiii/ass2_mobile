@@ -142,10 +142,7 @@ public class CommentFormatAdapter extends ArrayAdapter<Comment> {
         return convertView;
     }
 
-    /**
-     * Returns a string representing the number of days ago the post was made
-     * @return
-     */
+
     private String getTimestampDifference(Comment comment){
         Log.d(TAG, "getTimestampDifference: getting timestamp difference.");
 

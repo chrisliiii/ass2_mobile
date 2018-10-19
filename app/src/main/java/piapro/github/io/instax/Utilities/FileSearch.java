@@ -7,11 +7,7 @@ import java.util.ArrayList;
 
 public class FileSearch {
 
-    /**
-     * Search a directory and return a list of all **directories** contained inside
-     * @param directory
-     * @return
-     */
+
     public static ArrayList<String> getDirectoryPaths(String directory){
         ArrayList<String> pathArray = new ArrayList<>();
         File file = new File(directory);
@@ -24,11 +20,7 @@ public class FileSearch {
         return pathArray;
     }
 
-    /**
-     * Search a directory and return a list of all **files** contained inside
-     * @param directory
-     * @return
-     */
+
     public static ArrayList<String> getFilePaths(String directory){
         ArrayList<String> pathArray = new ArrayList<>();
         File file = new File(directory);

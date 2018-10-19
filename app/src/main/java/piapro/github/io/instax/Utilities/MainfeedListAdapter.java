@@ -516,10 +516,7 @@ public class MainfeedListAdapter extends ArrayAdapter<Photo> {
         holder.likes.setText(likesString);
     }
 
-    /**
-     * Returns a string representing the number of days ago the post was made
-     * @return
-     */
+    //represent the number of days ago when the post was made
     private String getTimestampDifference(Photo photo){
         Log.d(TAG, "getTimestampDifference: getting timestamp difference.");
 
@@ -542,32 +539,3 @@ public class MainfeedListAdapter extends ArrayAdapter<Photo> {
     }
 
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

@@ -7,12 +7,12 @@ import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.ListView;
 
 import com.ittianyu.bottomnavigationviewex.BottomNavigationViewEx;
 
 import piapro.github.io.instax.R;
 import piapro.github.io.instax.Utilities.BottomNavigationViewHelper;
-
 
 public class FavoriteActivity extends AppCompatActivity{
 
@@ -20,6 +20,7 @@ public class FavoriteActivity extends AppCompatActivity{
     private static final int ACTIVITY = 3;
 
     private Context fContext = FavoriteActivity.this;
+    //private ListView fListView;
 
     @Override
     //Alt+Insert open Generate Method
@@ -27,14 +28,15 @@ public class FavoriteActivity extends AppCompatActivity{
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_like);
+
+        //fListView = (ListView) findViewById(R.id.listView);
         Log.d(TAG, "onCreate: Started");
 
         btmNaviViewSetup();
     }
 
-    /**
-     * Setup Bottom Navigation View
-     */
+
+   //setup bottom navigation bar
     private void btmNaviViewSetup(){
         Log.d(TAG, "btmNaviViewSetup: Bottom Navigation View Setting up");
         BottomNavigationViewEx bottomNavigationViewEx = (BottomNavigationViewEx) findViewById(R.id.bottomNaviBar);
