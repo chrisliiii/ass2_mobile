@@ -22,10 +22,12 @@ import android.os.Message;
 import android.provider.MediaStore;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
@@ -39,7 +41,17 @@ import android.os.AsyncTask;
 import android.os.Bundle;
 import android.os.Environment;
 
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
+
 import piapro.github.io.instax.R;
+import piapro.github.io.instax.ShareComponents.NextActivity;
+import piapro.github.io.instax.Utilities.MethodFirebase;
 
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
@@ -55,6 +67,9 @@ import java.util.Calendar;
 import java.util.Date;
 
 public class BluetoothActivity extends AppCompatActivity {
+
+    private static final String TAG = "BluetoothActivity";
+
     Button btn_Send,btn_Listen,btn_ListDevice,btn_Upload ;
     ListView listDevices;
     TextView status_view;
@@ -78,6 +93,17 @@ public class BluetoothActivity extends AppCompatActivity {
     private static final int RESULT_LOAD_IMAGE = 1;
     private Bitmap bitmap;
     private BitmapDrawable bitmapDrawable;
+
+    //firebase
+    private FirebaseAuth nAuth;
+    private FirebaseAuth.AuthStateListener nAuthListener;
+    private FirebaseDatabase nFirebaseDatabase;
+    private DatabaseReference nRef;
+    private MethodFirebase nMethodFirebase;
+
+    private int imageCount = 0;
+    private Intent intent;
+    private String imgUrl;
 
 
     @Override
@@ -246,6 +272,7 @@ public class BluetoothActivity extends AppCompatActivity {
                         Bitmap imageBitmap = imageView.getDrawingCache();
                         if (imageBitmap != null) {
                             new saveImageTask().execute(imageBitmap);
+
                         }
                     }
                 });
@@ -463,7 +490,7 @@ public class BluetoothActivity extends AppCompatActivity {
             try {
                 String externalStorage = Environment.getExternalStorageDirectory().toString();
 
-                File file = new File(externalStorage + "/DCIM");
+                File file = new File(externalStorage + "/DCIM/Camera");
                 if (!file.exists()) {
                     file.mkdirs();
                 }
@@ -487,6 +514,63 @@ public class BluetoothActivity extends AppCompatActivity {
             Toast.makeText(getApplicationContext(),result,Toast.LENGTH_SHORT).show();
 
             imageView.setDrawingCacheEnabled(false);
+        }
+    }
+
+    //firebase part
+    private void setupFirebaseAuth(){
+        Log.d(TAG, "setupFirebaseAuth: setting up firebase auth.");
+        nAuth = FirebaseAuth.getInstance();
+        nFirebaseDatabase = FirebaseDatabase.getInstance();
+        nRef = nFirebaseDatabase.getReference();
+        Log.d(TAG, "onDataChange: image count: " + imageCount);
+
+        nAuthListener = new FirebaseAuth.AuthStateListener() {
+            @Override
+            public void onAuthStateChanged(@NonNull FirebaseAuth firebaseAuth) {
+                FirebaseUser user = firebaseAuth.getCurrentUser();
+
+
+                if (user != null) {
+                    // User is signed in
+                    Log.d(TAG, "onAuthStateChanged:signed_in:" + user.getUid());
+                } else {
+                    // User is signed out
+                    Log.d(TAG, "onAuthStateChanged:signed_out");
+                }
+                // ...
+            }
+        };
+
+
+        nRef.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+
+                imageCount = nMethodFirebase.getImageCount(dataSnapshot);
+                Log.d(TAG, "onDataChange: image count: " + imageCount);
+
+            }
+
+            @Override
+            public void onCancelled(DatabaseError databaseError) {
+
+            }
+        });
+    }
+
+
+    @Override
+    public void onStart() {
+        super.onStart();
+        //nAuth.addAuthStateListener(nAuthListener);
+    }
+
+    @Override
+    public void onStop() {
+        super.onStop();
+        if (nAuthListener != null) {
+            nAuth.removeAuthStateListener(nAuthListener);
         }
     }
 

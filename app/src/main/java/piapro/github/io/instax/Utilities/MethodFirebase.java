@@ -48,7 +48,7 @@ public class MethodFirebase {
     private StorageReference mStorageReference;
     private String userID;
 
-    //vars
+
     private Context mContext;
     private double mPhotoUploadProgress = 0;
 

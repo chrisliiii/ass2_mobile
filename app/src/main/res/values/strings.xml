@@ -71,4 +71,5 @@
     <string name="save_picture_failed">ERROR: Image Save Failed</string>
     <string name="save_picture_success">SUCCESS:Image Saved to %s</string>
 
+
 </resources>
