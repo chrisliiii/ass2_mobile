@@ -66,5 +66,9 @@
     <string name="openCamera_string">Open Camera</string>
     <string name="next_String">Next</string>
 
+    <!-- bluetooth -->
+    <string name="save_picture">Save Photo</string>
+    <string name="save_picture_failed">ERROR: Image Save Failed</string>
+    <string name="save_picture_success">SUCCESS:Image Saved to %s</string>
 
 </resources>
