@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:background="@android:color/black"
+    android:layout_height="match_parent">
+    <com.theartofdev.edmodo.cropper.CropImageView
+        android:id="@+id/id_iv_preview_photo"
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:cropBackgroundColor="#88AA66CC"
+        app:cropBorderCornerColor="@android:color/holo_blue_bright"
+        app:cropBorderCornerOffset="0dp"
+        app:cropBorderCornerThickness="5dp"
+        app:cropBorderLineColor="@android:color/holo_green_light"
+        app:cropBorderLineThickness="1dp"
+        app:cropGuidelines="on"
+        app:cropGuidelinesColor="@android:color/holo_red_dark"
+        app:cropInitialCropWindowPaddingRatio="0"
+        app:cropSnapRadius="0dp"/>
+
+
+
+    <ImageView
+        android:id="@+id/id_iv_cancel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentBottom="true"
+        android:layout_margin="40dp"
+        android:padding="15dp"
+        android:src="@mipmap/cancel"
+        />
+
+    <ImageView
+        android:id="@+id/id_iv_ok"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:layout_margin="40dp"
+        android:padding="15dp"
+        android:src="@mipmap/ok"
+        />
+</RelativeLayout>

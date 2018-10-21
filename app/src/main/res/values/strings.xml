@@ -66,6 +66,35 @@
     <string name="openCamera_string">Open Camera</string>
     <string name="next_String">Next</string>
 
+    <!-- Pictures Choosing -->
+    <string name="origin_picture">original photo</string>
+    <string name="tip_type_not_image">chosen is not picture</string>
+    <string name="tip_no_camera">no camera</string>
+    <string name="tip_tips">tip</string>
+    <string name="tip_compress">compressing photos...</string>
+    <string name="tip_compress_failed">"%1$s image compression failed:%2$s picturePath:%3$s"</string>
+    <string name="msg_crop_failed">"pictures with cutting failure"</string>
+    <string name="msg_compress_failed">"pictures with compression failure"</string>
+    <string name="msg_crop_canceled">" cutting cancel"</string>
+    <string name="msg_operation_canceled">"operation is cancelled"</string>
+    <string name="tip_permission_camera">no access to camera is allowed. Please open in permission management.</string>
+    <string name="tip_permission_storage">no access to use SD card. Please open in permission management.</string>
+    <string name="tip_permission_camera_storage">no access to camera and SD card is allowed. Please open in permission management.</string>
+
+    <!-- custom multiple image select -->
+    <string name="album_view">choose a picture</string>
+    <string name="image_view">click to choose</string>
+    <string name="add">confirm</string>
+    <string name="selected">selected</string>
+    <string name="limit_exceeded">select at most %d number of pictures</string>
+
+    <!-- Request Permission -->
+    <string name="permission_info">apply permission</string>
+    <string name="permission_force">please go to the settings page to open the app privileges.</string>
+    <string name="permission_ok">ok</string>
+    <string name="permission_settings">setting</string>
+    <string name="permission_package">package</string>
+
     <!-- bluetooth -->
     <string name="save_picture">Save Photo</string>
     <string name="save_picture_failed">ERROR: Image Save Failed</string>

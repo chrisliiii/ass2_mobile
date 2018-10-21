@@ -2,6 +2,7 @@ package piapro.github.io.instax.HomeComponents;
 
 import android.content.Context;
 import android.content.Intent;
+import android.graphics.Bitmap;
 import android.support.annotation.NonNull;
 import android.support.design.widget.TabLayout;
 import android.support.v4.app.FragmentTransaction;
@@ -47,6 +48,8 @@ public class HomeActivity extends AppCompatActivity implements
     private static final int HOME_FRAGMENT = 1;
 
     private Context hContext = HomeActivity.this;
+    private CameraFragment cameraFragment= new CameraFragment();
+    public static Bitmap mImage = null;
 
     //tools
     private ViewPager hViewPager;
@@ -116,6 +119,14 @@ public class HomeActivity extends AppCompatActivity implements
     private void initImageLoader(){
         LoadUniversalImage universalImageLoader = new LoadUniversalImage(hContext);
         ImageLoader.getInstance().init(universalImageLoader.getConfig());
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        if (mImage!=null){
+            cameraFragment.setmImage(mImage);
+        }
     }
 
     // add three fragment

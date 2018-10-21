@@ -8,4 +8,36 @@
         <item name="colorAccent">@color/colorAccent</item>
     </style>
 
+    <!-- Default title custom attribute -->
+    <declare-styleable name="title_widget_layout">
+
+        <!-- Return button display -->
+        <attr name="title_miv_back" format="reference"/>
+
+        <!-- Return text display -->
+        <attr name="title_tv_back" format="string"/>
+
+        <!-- Display of title text -->
+        <attr name="title_text" format="string"/>
+
+        <!-- Display of the first icon on the right -->
+        <attr name="title_miv_right1" format="reference"/>
+
+        <!-- Display of second icons on the right -->
+        <attr name="title_miv_right2" format="reference"/>
+
+        <!-- Display of the first character on the right -->
+        <attr name="title_tv_right3" format="string"/>
+
+        <!-- Display of the second characters on the right -->
+        <attr name="title_tv_right4" format="string"/>
+
+        <!-- Color of title -->
+        <attr name="title_bg_color" format="reference|color"/>
+
+        <!-- Set the color of the battery cable -->
+        <attr name="title_stu_color" format="reference|color"/>
+
+    </declare-styleable>
+
 </resources>

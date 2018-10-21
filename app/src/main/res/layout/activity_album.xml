@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+    <!-- This textView is for placeholder purposes so that controls can be jacked into the status bar.
+    Without this TextView status bar, no other controls would be jacked in -->
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:clipToPadding="true"
+        android:fitsSystemWindows="true"
+        android:visibility="gone" />
+    <lib.SlidingMenu
+        xmlns:sliding="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/slidingmenulayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        sliding:behindOffset="0dp"
+        sliding:fadeDegree="1"
+        sliding:fadeEnabled="true"
+        sliding:touchModeAbove="margin"
+        sliding:viewAbove="@layout/activity_image_select" />
+</LinearLayout>

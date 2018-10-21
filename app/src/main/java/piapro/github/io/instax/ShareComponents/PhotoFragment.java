@@ -15,10 +15,17 @@ import android.widget.Button;
 import piapro.github.io.instax.ProfileComponents.AccountActivity;
 import piapro.github.io.instax.R;
 import piapro.github.io.instax.Utilities.Permissions;
+import takephoto.simpActivity.CustomHelper;
+import piapro.github.io.instax.takeview.CameraActivity;
 
-public class PhotoFragment extends Fragment {
+public class PhotoFragment extends Fragment implements View.OnClickListener {
 
     private static final String TAG = "PhotoFragment";
+
+    private CustomHelper customHelper;
+    private float colorArray[] = null;
+
+    private Button  Button14, Button15;
 
     private static final int PHOTO_FRAGMENT_NUM = 1;
     private static final int  CAMERA_REQUEST_CODE = 5;
@@ -29,6 +36,8 @@ public class PhotoFragment extends Fragment {
     public View onCreateView(final LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_image, container, false);
         Log.d(TAG, "onCreateView: start.");
+
+        inintView(view);
 
         Button btnLaunchCamera = (Button) view.findViewById(R.id.button_openCamera);
         btnLaunchCamera.setOnClickListener(new View.OnClickListener() {
@@ -61,6 +70,36 @@ public class PhotoFragment extends Fragment {
             return false;
         }
     }
+
+    private void inintView(View view) {
+        customHelper= CustomHelper.of();
+
+        Button14 = (Button)view.findViewById(R.id.Button14);
+        Button14.setOnClickListener(this);
+
+        Button15 = (Button)view.findViewById(R.id.Button15);
+        Button15.setOnClickListener(this);
+    }
+
+    @Override
+    public void onClick(View v) {
+        switch (v.getId()){
+            case R.id.Button14:
+                startActivity(new Intent(getActivity(),CameraActivity.class));
+                break;
+
+            case R.id.Button15:
+                colorArray=new float[]{
+                        1.438F,  -0.122F, -0.016F, 0, -0.03F,
+                        -0.062F, 1.378F,  -0.016F, 0, 0.05F,
+                        -0.062F, -0.122F, 1.483F,  0, -0.02F,
+                        0,       0,       0,       1, 0
+                };
+
+                break;
+        }
+    }
+
 
     @Override
     public void onActivityResult(int requestCode, int resultCode, Intent data) {

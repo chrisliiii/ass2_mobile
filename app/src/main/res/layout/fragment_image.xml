@@ -17,4 +17,23 @@
         android:text="@string/openCamera_string"
         android:background="@drawable/canvas_white_button" />
 
+    <Button
+        android:id="@+id/Button14"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginBottom="229dp"
+        android:layout_marginStart="65dp"
+        android:text="grid camera" />
+
+    <Button
+        android:id="@+id/Button15"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignTop="@+id/Button14"
+        android:layout_marginEnd="83dp"
+        android:text="bright Con" />
+
 </RelativeLayout>
